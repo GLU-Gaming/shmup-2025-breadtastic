@@ -1,26 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class movementscript : MonoBehaviour
 {
     public float speed = 5.0f;
+    private Vector2 MoveImput;
 
     void Update()
-    {
-        // Get the vertical input (up/down arrow keys or W/S keys)
-        float verticalInput = Input.GetAxis("Vertical");
-
-        // Calculate the new position
-        
-
-        // Update the player's position
-        
+    {        
+        Move();
     }
 
-    public void OnMove(Vector2 Move)
+    private void Move()
     {
-        Vector3 Direction = new Vector3(0, Move.y, 0);
-        Vector3 newPosition = transform.position + new Vector3(0, Direction.y * speed * Time.deltaTime, 0);
 
+
+        // Calculate the new position
+        Vector3 newPosition = transform.position + new Vector3(MoveImput.x * speed * Time.deltaTime, MoveImput.y * speed * Time.deltaTime, 0);
+
+        // Update the player's position
         transform.position = newPosition;
+    }
+
+    public void OnMove(InputValue value)
+    {
+        // Get the input (WASD keys)
+        MoveImput = value.Get<Vector2>();
     }
 }
