@@ -10,9 +10,17 @@ public class movementscript : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         // Calculate the new position
-        Vector3 newPosition = transform.position + new Vector3(0, verticalInput * speed * Time.deltaTime, 0);
+        
 
         // Update the player's position
+        
+    }
+
+    public void OnMove(Vector2 Move)
+    {
+        Vector3 Direction = new Vector3(0, Move.y, 0);
+        Vector3 newPosition = transform.position + new Vector3(0, Direction.y * speed * Time.deltaTime, 0);
+
         transform.position = newPosition;
     }
 }
