@@ -28,6 +28,6 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Vernietig de kogel na 1 seconde
-        Destroy(bullet, 1.0f);
+        Destroy(bullet, 1.7f);
     }
 }
