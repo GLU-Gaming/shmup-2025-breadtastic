@@ -14,8 +14,6 @@ public class movementscript : MonoBehaviour
 
     private void Move()
     {
-
-
         // Calculate the new position
         Vector3 newPosition = transform.position + new Vector3(MoveImput.x * speed * Time.deltaTime, MoveImput.y * speed * Time.deltaTime, 0);
 
