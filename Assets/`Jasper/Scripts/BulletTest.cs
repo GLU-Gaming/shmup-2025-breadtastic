@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Bullet : MonoBehaviour
+public class BulletTest : MonoBehaviour
 {
     private Rigidbody Rb;
     private Rigidbody2D Rb2D;
