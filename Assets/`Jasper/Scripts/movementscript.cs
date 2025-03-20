@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 
 public class movementscript : MonoBehaviour
 {
-    public float speed = 5.0f;
+    [SerializeField] private float speed = 5f;
     private Vector2 MoveImput;
 
     void Update()
-    {        
+    {
         Move();
     }
 
