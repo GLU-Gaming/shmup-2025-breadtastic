@@ -266,6 +266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7815511772964601028, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
+      propertyPath: EnemyBulletSpawnpoint
+      value: 
+      objectReference: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
     - target: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -470,7 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88861ba928829bf48aae0f474d489ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  Speed: 5
+  PlayerSize: {x: 0, y: 0}
 --- !u!114 &1784957177
 MonoBehaviour:
   m_ObjectHideFlags: 0
