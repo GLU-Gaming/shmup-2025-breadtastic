@@ -6,6 +6,7 @@ public class BulletShoot : MonoBehaviour
     public GameObject bulletPrefab; // De prefab van de kogel
     public Transform bulletSpawnpoint; // Het punt waar de kogel wordt gespawned
     public float bulletSpeed = 100.0f; // De snelheid van de kogel
+    public float laserSpeed = 150.0f; // De snelheid van de laser
     public float fireRate = 0.01f; // De tijd tussen het afvuren van kogels voor de laser
     public float bulletCooldown = 0.5f; // De cooldown tijd voor het schieten met de linkermuisknop
 
@@ -43,7 +44,7 @@ public class BulletShoot : MonoBehaviour
 
         while (isFiring)
         {
-            Shoot();
+            ShootLaser();
             yield return new WaitForSeconds(fireRate);
         }
     }
@@ -74,6 +75,22 @@ public class BulletShoot : MonoBehaviour
         if (rb != null)
         {
             rb.linearVelocity = bulletSpawnpoint.right * bulletSpeed;
+        }
+
+        // Vernietig de kogel na 1.7 seconden
+        Destroy(bullet, 1.7f);
+    }
+
+    void ShootLaser()
+    {
+        // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
+
+        // Voeg snelheid toe aan de kogel
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = bulletSpawnpoint.right * laserSpeed;
         }
 
         // Vernietig de kogel na 1.7 seconden

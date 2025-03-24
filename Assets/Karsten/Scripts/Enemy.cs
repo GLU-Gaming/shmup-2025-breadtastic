@@ -36,15 +36,24 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
+        // Debug log to check the position and rotation of the EnemyBulletSpawnpoint
+        Debug.Log($"EnemyBulletSpawnpoint Position: {EnemyBulletSpawnpoint.position}, Rotation: {EnemyBulletSpawnpoint.rotation}");
+
         // Maak een nieuwe kogel aan op de positie van de EnemyBulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, EnemyBulletSpawnpoint.position, EnemyBulletSpawnpoint.rotation);
+
+        // Debug log to check the position of the instantiated bullet
+        Debug.Log($"Bullet Position after Instantiation: {bullet.transform.position}");
 
         // Voeg snelheid toe aan de kogel in de voorwaartse richting van de EnemyBulletSpawnpoint
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = EnemyBulletSpawnpoint.right * bulletSpeed;
+            rb.velocity = EnemyBulletSpawnpoint.right * bulletSpeed;
         }
+
+        // Debug log to check the velocity of the bullet
+        Debug.Log($"Bullet Velocity: {rb.velocity}");
 
         // Vernietig de kogel na 2 seconden
         Destroy(bullet, 2.0f);
@@ -70,5 +79,22 @@ public class Enemy : MonoBehaviour
 
         // Vernietig de vijand
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Controleer of de vijand de speler raakt
+        if (collision.CompareTag("Player"))
+        {
+            // Breng schade toe aan de speler
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
+            }
+
+            // Vernietig de vijand
+            Destroy(gameObject);
+        }
     }
 }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int health = 100;
+    public int lives = 3; // Aantal levens van de speler
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        lives -= 1; // Verminder het aantal levens met 1
+        if (lives <= 0)
         {
             // Logica voor wanneer de speler sterft
             Debug.Log("Player is dead!");

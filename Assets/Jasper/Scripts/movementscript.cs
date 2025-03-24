@@ -48,10 +48,7 @@ public class movementscript : MonoBehaviour
         Move();
     }
 
-    private void Move()
-    {
-        Rb.AddForce(new Vector3(Speed * MoveImput.x, Speed * MoveImput.y, 0));
-    }
+    private void Move() => Rb.AddForce(new Vector3(Speed * MoveImput.x, Speed * MoveImput.y, 0));   
 
     public void OnMove(InputValue value)
     {
