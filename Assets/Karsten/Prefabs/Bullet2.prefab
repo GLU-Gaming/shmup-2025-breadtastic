@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3352134056814060885}
   - component: {fileID: 8377528691879739273}
   - component: {fileID: 595027359701251307}
-  - component: {fileID: 2518533151201887709}
-  - component: {fileID: 5999680346144439346}
+  - component: {fileID: 7157604757474868833}
+  - component: {fileID: -976814269059012230}
   m_Layer: 0
   m_Name: Bullet2
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.065987, y: 1.0716423, z: -0.012372304}
-  m_LocalScale: {x: 1.51, y: -0.26, z: 0.32}
+  m_LocalScale: {x: 0.54, y: -0.14, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!61 &2518533151201887709
+--- !u!61 &7157604757474868833
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -132,9 +132,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.99999994}
+  m_Size: {x: 0.99999994, y: 1.0000001}
   m_EdgeRadius: 0
---- !u!50 &5999680346144439346
+--- !u!50 &-976814269059012230
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0

@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; // De prefab van de vijand
-    public float spawnAreaHeight = 5.0f; // De hoogte van het spawngebied
     public float spawnXPosition = 15.0f; // De X-positie waar de vijanden spawnen
-    public float horizontalSpacing = 4.0f; // De horizontale afstand tussen de vijanden
+    public float verticalSpacing = 2.0f; // De verticale afstand tussen de vijanden
     public int initialEnemyCount = 3; // Het aantal vijanden in de eerste ronde
 
     private List<GameObject> enemies = new List<GameObject>(); // Lijst om de vijanden bij te houden
@@ -40,11 +39,10 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(int index)
     {
-        // Bepaal een willekeurige Y-positie binnen het spawngebied
-        float randomY = Random.Range(-spawnAreaHeight / 2, spawnAreaHeight / 2);
+        // Bepaal de spawnpositie met een verticale offset
+        float spawnYPosition = index * verticalSpacing;
 
-        // Bepaal de spawnpositie met een horizontale offset
-        Vector3 spawnPosition = new Vector3(spawnXPosition + index * horizontalSpacing, randomY, 0);
+        Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
 
         // Maak een nieuwe vijand aan op de spawnpositie
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
