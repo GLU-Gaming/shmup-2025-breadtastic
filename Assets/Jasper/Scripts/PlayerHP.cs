@@ -16,9 +16,9 @@ public class Helt : MonoBehaviour
         HPBar();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        TestDemageEnamy Demage = collision.gameObject.GetComponent<TestDemageEnamy>();
+        TestDemageEnamy Demage = other.gameObject.GetComponent<TestDemageEnamy>();
 
         if (Demage)
         {
