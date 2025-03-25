@@ -358,7 +358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1612486029}
         m_TargetAssemblyTypeName: RetrySctipt, Assembly-CSharp
-        m_MethodName: qiut
+        m_MethodName: quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1612486028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c633395cf2b1e2240944d15625f34e88, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e8a29ed7a08510449d0b0cd57b4d1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1612486030

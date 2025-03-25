@@ -8,7 +8,7 @@ public class RetrySctipt : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void qiut()
+    public void quit()
     {
         Application.Quit();
     }
