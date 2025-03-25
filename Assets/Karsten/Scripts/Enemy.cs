@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100; // De maximale gezondheid van de vijand
     public GameObject bulletPrefab; // De prefab van de kogel
     public Transform EnemyBulletSpawnpoint; // Het punt waar de kogel wordt gespawned
-    public float bulletSpeed = 10.0f; // De snelheid van de kogel
+    public float bulletSpeed = 5.0f; // De snelheid van de kogel
     public float fireRate = 2.0f; // De tijd tussen het afvuren van kogels
 
     private int currentHealth;
@@ -49,14 +49,16 @@ public class Enemy : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = EnemyBulletSpawnpoint.right * bulletSpeed;
+
+            rb.linearVelocity = EnemyBulletSpawnpoint.right * -bulletSpeed;
+
         }
 
         // Debug log to check the velocity of the bullet
         Debug.Log($"Bullet Velocity: {rb.linearVelocity}");
 
         // Vernietig de kogel na 2 seconden
-        Destroy(bullet, 2.0f);
+        Destroy(bullet, 4.0f);
     }
 
     // Functie om schade toe te brengen aan de vijand
