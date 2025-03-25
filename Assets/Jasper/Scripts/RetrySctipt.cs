@@ -8,8 +8,8 @@ public class RetrySctipt : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    private void qiut()
+    public void qiut()
     {
-
+        Application.Quit();
     }
 }
