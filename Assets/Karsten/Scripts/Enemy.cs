@@ -49,11 +49,11 @@ public class Enemy : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = EnemyBulletSpawnpoint.right * bulletSpeed;
+            rb.linearVelocity = EnemyBulletSpawnpoint.right * bulletSpeed;
         }
 
         // Debug log to check the velocity of the bullet
-        Debug.Log($"Bullet Velocity: {rb.velocity}");
+        Debug.Log($"Bullet Velocity: {rb.linearVelocity}");
 
         // Vernietig de kogel na 2 seconden
         Destroy(bullet, 2.0f);
