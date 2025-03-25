@@ -49,7 +49,9 @@ public class Enemy : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+
             rb.linearVelocity = EnemyBulletSpawnpoint.right * -bulletSpeed;
+
         }
 
         // Debug log to check the velocity of the bullet
