@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab; // De prefab van de vijand
     public float spawnXPosition = 15.0f; // De X-positie waar de vijanden spawnen
     public float verticalSpacing = 2.0f; // De verticale afstand tussen de vijanden
+    public float horizontalSpacing = 2.0f; // De horizontale afstand tussen de vijanden in de tweede rij
     public int initialEnemyCount = 3; // Het aantal vijanden in de eerste ronde
 
     private List<GameObject> enemies = new List<GameObject>(); // Lijst om de vijanden bij te houden
@@ -42,16 +43,41 @@ public class EnemySpawner : MonoBehaviour
         // Bepaal de spawnpositie met een verticale offset
         float spawnYPosition = index * verticalSpacing;
 
-        Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
+        // Als de huidige ronde groter is dan 2, spawn vijanden in twee rijen
+        if (currentRound > 2)
+        {
+            // Bereken de rij en kolom voor de vijand
+            int row = index % 2;
+            int column = index / 2;
 
-        // Maak een nieuwe vijand aan op de spawnpositie
-        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            // Pas de spawnpositie aan voor de tweede rij
+            spawnYPosition = row * verticalSpacing;
+            float spawnXOffset = column * horizontalSpacing;
 
-        // Voeg de vijand toe aan de lijst
-        enemies.Add(enemy);
+            Vector3 spawnPosition = new Vector3(spawnXPosition + spawnXOffset, spawnYPosition, 0);
 
-        // Abonneer op het vijand sterfgebeurtenis
-        enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
+            // Maak een nieuwe vijand aan op de spawnpositie
+            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+            // Voeg de vijand toe aan de lijst
+            enemies.Add(enemy);
+
+            // Abonneer op het vijand sterfgebeurtenis
+            enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
+        }
+        else
+        {
+            Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
+
+            // Maak een nieuwe vijand aan op de spawnpositie
+            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+            // Voeg de vijand toe aan de lijst
+            enemies.Add(enemy);
+
+            // Abonneer op het vijand sterfgebeurtenis
+            enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
+        }
     }
 
     void HandleEnemyDeath(GameObject enemy)
