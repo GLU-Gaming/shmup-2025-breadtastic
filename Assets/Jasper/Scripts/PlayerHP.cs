@@ -18,7 +18,7 @@ public class Helt : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TestDemageEnamy Demage = other.gameObject.GetComponent<TestDemageEnamy>();
+        TestDemageEnamy Demage = other.GetComponent<TestDemageEnamy>();
 
         if (Demage)
         {
