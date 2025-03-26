@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BeamMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 7cd1f7ae673c7f34e901c2d4b1db9b45, type: 3}
+  m_Name: beamendMat
+  m_Shader: {fileID: -6465566751694194690, guid: d7c04eb2b374e7d41962e3146e90046e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -72,6 +72,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _beam_end_texture:
+        m_Texture: {fileID: 2800000, guid: 52770d93467bfb74a95fc26f72d5dc76, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -106,6 +110,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _NoiseScale: 20
+    - _NoiseStr: 0.1
     - _NoiseStrenght: 0.1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -124,13 +129,13 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LaserTextureSpeed: {r: -2, g: 0, b: 0, a: 0}
+    - _EndSpd: {r: 0, g: 0, b: 0, a: 0}
+    - _LaserTextureSpeed: {r: -3, g: 0, b: 0, a: 0}
     - _NoiseSpeed: {r: -1.5, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _yOffset: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4831853786806663664
+--- !u!114 &8008068001410517935
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
