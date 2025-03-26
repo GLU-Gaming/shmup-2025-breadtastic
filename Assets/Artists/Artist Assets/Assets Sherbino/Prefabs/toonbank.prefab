@@ -2360,6 +2360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8367286803068833428}
+  - component: {fileID: 2377546502091798441}
   m_Layer: 0
   m_Name: toonbank
   m_TagString: Untagged
@@ -2384,6 +2385,27 @@ Transform:
   - {fileID: 5326783235694741046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &2377546502091798441
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313555930627553553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9226335, y: 0.9734378, z: 6.104575}
+  m_Center: {x: 0.0052539506, y: 0.91963637, z: 0.017920334}
 --- !u!1 &8369074726104116502
 GameObject:
   m_ObjectHideFlags: 0
