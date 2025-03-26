@@ -55,7 +55,7 @@ public class BulletShoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
 
         // Voeg snelheid toe aan de kogel
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = bulletSpawnpoint.right * bulletSpeed;
@@ -71,7 +71,7 @@ public class BulletShoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
 
         // Voeg snelheid toe aan de kogel
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = bulletSpawnpoint.right * bulletSpeed;
@@ -87,7 +87,7 @@ public class BulletShoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
 
         // Voeg snelheid toe aan de kogel
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = bulletSpawnpoint.right * laserSpeed;

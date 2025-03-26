@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public int damage = 10; // De schade die de kogel toebrengt
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider collision)
     {
         // Controleer of de kogel een vijand raakt
         Enemy enemy = collision.GetComponent<Enemy>();
