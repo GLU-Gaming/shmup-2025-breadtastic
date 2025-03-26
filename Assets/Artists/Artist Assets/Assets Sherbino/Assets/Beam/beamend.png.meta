@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Artists/Artist Assets/Assets Sherbino/Assets/Beam/10 hp.png.meta
-guid: 1bb7299b4da833341b551a8395babb36
-========
-guid: 52770d93467bfb74a95fc26f72d5dc76
->>>>>>>> 4a436de725a4ebd4e7ea31cc0cd8e40883488d84:Assets/Artists/Artist Assets/Assets Sherbino/Assets/Beam/beamend.png.meta
+guid: 03a2d73f6385e1d469a1db7d64409daf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
