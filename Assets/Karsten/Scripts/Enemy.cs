@@ -46,10 +46,10 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Bullet Position after Instantiation: {bullet.transform.position}");
 
         // Voeg snelheid toe aan de kogel in de voorwaartse richting van de EnemyBulletSpawnpoint
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = EnemyBulletSpawnpoint.right * bulletSpeed;
+            rb.linearVelocity = EnemyBulletSpawnpoint.right * -bulletSpeed;
         }
 
         // Debug log to check the velocity of the bullet
@@ -84,17 +84,6 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Controleer of de vijand de speler raakt
-        if (collision.CompareTag("Player"))
-        {
-            // Breng schade toe aan de speler
-            Player player = collision.GetComponent<Player>();
-            if (player != null)
-            {
-                player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
-            }
-
-            // Vernietig de vijand
-            Destroy(gameObject);
-        }
+        
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Artists/Artist Assets/Assets Sherbino/Assets/Beam/10 hp.png.meta
 guid: 1bb7299b4da833341b551a8395babb36
+========
+guid: 52770d93467bfb74a95fc26f72d5dc76
+>>>>>>>> 4a436de725a4ebd4e7ea31cc0cd8e40883488d84:Assets/Artists/Artist Assets/Assets Sherbino/Assets/Beam/beamend.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -52,7 +56,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 0
   textureShape: 1
