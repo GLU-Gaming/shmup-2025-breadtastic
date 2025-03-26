@@ -74,7 +74,7 @@ public class BulletShoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = bulletSpawnpoint.right * bulletSpeed;
+            rb.linearVelocity = bulletSpawnpoint.right * -bulletSpeed;
         }
 
         // Vernietig de kogel na 1.7 seconden
@@ -90,7 +90,7 @@ public class BulletShoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = bulletSpawnpoint.right * laserSpeed;
+            rb.linearVelocity = bulletSpawnpoint.right * -laserSpeed;
         }
 
         // Vernietig de kogel na 1.7 seconden
