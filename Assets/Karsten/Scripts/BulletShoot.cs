@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.UI;
+=======
+using UnityEngine.InputSystem;
+>>>>>>> 23d6794d7cd605414df7fb0831bcc6bbe327e852
 
 public class BulletShoot : MonoBehaviour
 {
@@ -19,6 +23,9 @@ public class BulletShoot : MonoBehaviour
     private float nextFireTime = 0f;
     private float nextLaserTime = 0f;
 
+    private float buttonMain = 0;
+    private float buttonSecondary = 0;
+
     void Update()
     {
         // Update de cooldown-timer voor de laser
@@ -33,14 +40,19 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+        if (buttonMain != 0 && Time.time >= nextFireTime)
         {
             ShootBullet();
             nextFireTime = Time.time + bulletCooldown;
         }
 
+<<<<<<< HEAD
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
         if (Input.GetMouseButtonDown(1) && Time.time >= nextLaserTime)
+=======
+        // Controleer of de rechtermuisknop is ingedrukt
+        if (buttonSecondary != 0)
+>>>>>>> 23d6794d7cd605414df7fb0831bcc6bbe327e852
         {
             if (!isFiring)
             {
@@ -49,7 +61,7 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Controleer of de rechtermuisknop is losgelaten
-        if (Input.GetMouseButtonUp(1))
+        if (buttonSecondary == 0)
         {
             isFiring = false;
         }
@@ -116,5 +128,15 @@ public class BulletShoot : MonoBehaviour
 
         // Vernietig de kogel na 1.7 seconden
         Destroy(bullet, 1.7f);
+    }
+
+    public void OnMianAttack(InputValue value)
+    {
+        buttonMain = value.Get<float>();
+    }
+
+    public void OnSecondaryAttack(InputValue Value)
+    {
+        buttonSecondary = Value.Get<float>();
     }
 }
