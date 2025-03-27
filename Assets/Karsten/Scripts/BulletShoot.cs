@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BulletShoot : MonoBehaviour
 {
@@ -13,17 +14,20 @@ public class BulletShoot : MonoBehaviour
     private bool isFiring = false;
     private float nextFireTime = 0f;
 
+    private float buttonMain = 0;
+    private float buttonSecondary = 0;
+
     void Update()
     {
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+        if (buttonMain != 0 && Time.time >= nextFireTime)
         {
             ShootBullet();
             nextFireTime = Time.time + bulletCooldown;
         }
 
         // Controleer of de rechtermuisknop is ingedrukt
-        if (Input.GetMouseButtonDown(1))
+        if (buttonSecondary != 0)
         {
             if (!isFiring)
             {
@@ -32,7 +36,7 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Controleer of de rechtermuisknop is losgelaten
-        if (Input.GetMouseButtonUp(1))
+        if (buttonSecondary == 0)
         {
             isFiring = false;
         }
@@ -95,5 +99,15 @@ public class BulletShoot : MonoBehaviour
 
         // Vernietig de kogel na 1.7 seconden
         Destroy(bullet, 1.7f);
+    }
+
+    public void OnMianAttack(InputValue value)
+    {
+        buttonMain = value.Get<float>();
+    }
+
+    public void OnSecondaryAttack(InputValue Value)
+    {
+        buttonSecondary = Value.Get<float>();
     }
 }
