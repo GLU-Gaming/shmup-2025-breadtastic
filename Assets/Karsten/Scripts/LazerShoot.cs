@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LazerShoot : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class LazerShoot : MonoBehaviour
 
     private bool isFiring = false;
 
+    private bool button = false;
+
     void Update()
     {
         // Controleer of de rechtermuisknop is ingedrukt
-        if (Input.GetMouseButtonDown(1))
+        if (button)
         {
             if (!isFiring)
             {
@@ -22,7 +25,7 @@ public class LazerShoot : MonoBehaviour
         }
 
         // Controleer of de rechtermuisknop is losgelaten
-        if (Input.GetMouseButtonUp(1))
+        if (button != true)
         {
             isFiring = false;
         }
@@ -53,5 +56,10 @@ public class LazerShoot : MonoBehaviour
 
         // Vernietig de kogel na 1 seconde
         Destroy(bullet, 1.7f);
+    }
+
+    public void OnSecondaryAttack(InputValue Value)
+    {
+         button = Value.Get<bool>();
     }
 }
