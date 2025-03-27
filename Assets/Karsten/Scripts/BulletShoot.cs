@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UI;
-=======
 using UnityEngine.InputSystem;
->>>>>>> 23d6794d7cd605414df7fb0831bcc6bbe327e852
+
 
 public class BulletShoot : MonoBehaviour
 {
@@ -46,13 +44,13 @@ public class BulletShoot : MonoBehaviour
             nextFireTime = Time.time + bulletCooldown;
         }
 
-<<<<<<< HEAD
+
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
         if (Input.GetMouseButtonDown(1) && Time.time >= nextLaserTime)
-=======
+
         // Controleer of de rechtermuisknop is ingedrukt
         if (buttonSecondary != 0)
->>>>>>> 23d6794d7cd605414df7fb0831bcc6bbe327e852
+
         {
             if (!isFiring)
             {
