@@ -753,9 +753,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
-  chargingEnemyPrefab: {fileID: 0}
+  chargingEnemyPrefab: {fileID: 1028210083235728838, guid: 4d7348010472df84886ca6db83d098bb, type: 3}
   spawnXPosition: 15
   verticalSpacing: 2
+  spawnAreaHeight: 10
   initialEnemyCount: 3
 --- !u!1 &1784957172
 GameObject:
