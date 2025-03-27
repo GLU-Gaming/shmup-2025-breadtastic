@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
         // Debug log to check the position and rotation of the EnemyBulletSpawnpoint
         Debug.Log($"EnemyBulletSpawnpoint Position: {EnemyBulletSpawnpoint.position}, Rotation: {EnemyBulletSpawnpoint.rotation}");
@@ -81,9 +81,43 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider collision)
     {
         // Controleer of de vijand de speler raakt
-        
+        if (collision.CompareTag("Player"))
+        {
+            // Breng schade toe aan de speler
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
+            }
+
+            // Vernietig de vijand
+            Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log($"EnemyBullet collided with: {collision.gameObject.name}");
+
+        // Controleer of de kogel de speler raakt
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("EnemyBullet hit the Player");
+
+            // Breng schade toe aan de speler
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                int damage = 1; // Defineer de schade
+                player.TakeDamage(damage);
+                Debug.Log($"Player took {damage} damage, remaining lives: {player.lives}");
+            }
+
+            // Vernietig de kogel
+            Destroy(gameObject);
+        }
     }
 }

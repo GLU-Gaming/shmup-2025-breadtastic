@@ -4,9 +4,7 @@ public class Player : MonoBehaviour
 {
     public int lives = 15; // Aantal levens van de speler
 
-    private int damage = 1; // Hoeveelheid schade die de speler kan incasseren
-
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
         lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
         if (lives <= 0)
@@ -16,32 +14,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"EnemyBullet collided with: {collision.gameObject.name}");
+        Debug.Log($"Player collided with: {collision.gameObject.name}");
 
-        // Controleer of de kogel de speler raakt
-        
-            Debug.Log("EnemyBullet hit the Player");
-
-            // Breng schade toe aan de speler
+        // Controleer of de speler een vijandelijke kogel raakt
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
         if (enemyBullet != null)
         {
-            damage = enemyBullet.damage;
-            TakeDamage();
+            Debug.Log("Player hit by EnemyBullet");
+            TakeDamage(enemyBullet.damage);
+            Destroy(collision.gameObject); // Vernietig de kogel
+            return;
         }
 
-
-        // Breng schade toe aan de speler
+        // Controleer of de speler een vijand raakt
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy)
+        if (enemy != null)
         {
-            damage = 1; // Verminder het aantal levens van de speler met 1
-            TakeDamage();
+            Debug.Log("Player hit by Enemy");
+            TakeDamage(1); // Verminder het aantal levens van de speler met 1
+            Destroy(collision.gameObject); // Vernietig de vijand
         }
-
-        // Vernietig de vijand
-        Destroy(collision.gameObject);
     }
 }

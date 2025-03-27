@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // De prefab van de vijand
+    public GameObject enemyPrefab; // De prefab van de standaard vijand
+    public GameObject chargingEnemyPrefab; // De prefab van de charging vijand
     public float spawnXPosition = 15.0f; // De X-positie waar de vijanden spawnen
     public float verticalSpacing = 2.0f; // De verticale afstand tussen de vijanden
-    public float horizontalSpacing = 2.0f; // De horizontale afstand tussen de vijanden in de tweede rij
+    public float spawnAreaHeight = 10.0f; // De hoogte van het spawngebied
     public int initialEnemyCount = 3; // Het aantal vijanden in de eerste ronde
 
     private List<GameObject> enemies = new List<GameObject>(); // Lijst om de vijanden bij te houden
@@ -34,50 +35,47 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            SpawnEnemy(i);
+            if (currentRound > 2 && i % 2 == 0) // Na 2 rondes, spawn elke tweede vijand als een charging vijand
+            {
+                SpawnChargingEnemy(i);
+            }
+            else
+            {
+                SpawnEnemy(i);
+            }
         }
     }
 
     void SpawnEnemy(int index)
     {
-        // Bepaal de spawnpositie met een verticale offset
-        float spawnYPosition = index * verticalSpacing;
+        // Bepaal een willekeurige Y-positie binnen het spawngebied
+        float spawnYPosition = Random.Range(-spawnAreaHeight / 2, spawnAreaHeight / 2);
+        Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
 
-        // Als de huidige ronde groter is dan 2, spawn vijanden in twee rijen
-        if (currentRound > 2)
-        {
-            // Bereken de rij en kolom voor de vijand
-            int row = index % 2;
-            int column = index / 2;
+        // Maak een nieuwe vijand aan op de spawnpositie
+        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
-            // Pas de spawnpositie aan voor de tweede rij
-            spawnYPosition = row * verticalSpacing;
-            float spawnXOffset = column * horizontalSpacing;
+        // Voeg de vijand toe aan de lijst
+        enemies.Add(enemy);
 
-            Vector3 spawnPosition = new Vector3(spawnXPosition + spawnXOffset, spawnYPosition, 0);
+        // Abonneer op het vijand sterfgebeurtenis
+        enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
+    }
 
-            // Maak een nieuwe vijand aan op de spawnpositie
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+    void SpawnChargingEnemy(int index)
+    {
+        // Bepaal een willekeurige Y-positie binnen het spawngebied
+        float spawnYPosition = Random.Range(-spawnAreaHeight / 2, spawnAreaHeight / 2);
+        Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
 
-            // Voeg de vijand toe aan de lijst
-            enemies.Add(enemy);
+        // Maak een nieuwe charging vijand aan op de spawnpositie
+        GameObject enemy = Instantiate(chargingEnemyPrefab, spawnPosition, Quaternion.identity);
 
-            // Abonneer op het vijand sterfgebeurtenis
-            enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
-        }
-        else
-        {
-            Vector3 spawnPosition = new Vector3(spawnXPosition, spawnYPosition, 0);
+        // Voeg de vijand toe aan de lijst
+        enemies.Add(enemy);
 
-            // Maak een nieuwe vijand aan op de spawnpositie
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-
-            // Voeg de vijand toe aan de lijst
-            enemies.Add(enemy);
-
-            // Abonneer op het vijand sterfgebeurtenis
-            enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
-        }
+        // Abonneer op het vijand sterfgebeurtenis
+        enemy.GetComponent<Enemy>().OnEnemyDeath += HandleEnemyDeath;
     }
 
     void HandleEnemyDeath(GameObject enemy)

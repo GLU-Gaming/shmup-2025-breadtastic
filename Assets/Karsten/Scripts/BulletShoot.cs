@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletShoot : MonoBehaviour
 {
@@ -9,12 +10,28 @@ public class BulletShoot : MonoBehaviour
     public float laserSpeed = 150.0f; // De snelheid van de laser
     public float fireRate = 0.01f; // De tijd tussen het afvuren van kogels voor de laser
     public float bulletCooldown = 0.5f; // De cooldown tijd voor het schieten met de linkermuisknop
+    public float laserCooldown = 10.0f; // De cooldown tijd voor de laser
+    public float laserDuration = 2.0f; // De tijd dat de laser kan worden gebruikt
+
+    public Image laserCooldownImage; // UI-element voor de laser cooldown
 
     private bool isFiring = false;
     private float nextFireTime = 0f;
+    private float nextLaserTime = 0f;
 
     void Update()
     {
+        // Update de cooldown-timer voor de laser
+        if (Time.time < nextLaserTime)
+        {
+            float remainingCooldown = nextLaserTime - Time.time;
+            laserCooldownImage.fillAmount = 1 - (remainingCooldown / laserCooldown);
+        }
+        else
+        {
+            laserCooldownImage.fillAmount = 1;
+        }
+
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
@@ -22,8 +39,8 @@ public class BulletShoot : MonoBehaviour
             nextFireTime = Time.time + bulletCooldown;
         }
 
-        // Controleer of de rechtermuisknop is ingedrukt
-        if (Input.GetMouseButtonDown(1))
+        // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
+        if (Input.GetMouseButtonDown(1) && Time.time >= nextLaserTime)
         {
             if (!isFiring)
             {
@@ -41,12 +58,16 @@ public class BulletShoot : MonoBehaviour
     IEnumerator FireLaser()
     {
         isFiring = true;
+        nextLaserTime = Time.time + laserCooldown;
 
-        while (isFiring)
+        float laserEndTime = Time.time + laserDuration;
+        while (isFiring && Time.time < laserEndTime)
         {
             ShootLaser();
             yield return new WaitForSeconds(fireRate);
         }
+
+        isFiring = false;
     }
 
     void Shoot()
