@@ -119,6 +119,120 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &387156018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.993
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.213
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1174089
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.45750964
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -8.246247e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8892047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 8.246247e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+      propertyPath: m_Name
+      value: Cups
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf96481b69d5fec4c9a7307a2d849456, type: 3}
+--- !u!1001 &468261109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4473882
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0906402
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
+      propertyPath: m_Name
+      value: Coffee machine with cups
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 565462329eab09747b87da7e1d7a0f6c, type: 3}
 --- !u!1 &1202509037
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202509039}
   - component: {fileID: 1202509038}
+  - component: {fileID: 1202509040}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -216,6 +331,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1202509040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202509037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1604816812
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,3 +452,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1604816815}
   - {fileID: 1202509039}
+  - {fileID: 468261109}
+  - {fileID: 387156018}
