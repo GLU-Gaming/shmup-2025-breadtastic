@@ -20,21 +20,20 @@ public class Player : MonoBehaviour
 
         // Controleer of de speler een vijandelijke kogel raakt
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
-        if (enemyBullet != null)
+        if (enemyBullet)
         {
-            Debug.Log("Player hit by EnemyBullet");
-            TakeDamage(enemyBullet.damage);
-            Destroy(collision.gameObject); // Vernietig de kogel
-            return;
+            Debug.Log("Player hit by Enemy");
+            TakeDamage(enemyBullet.damage); // Verminder het aantal levens van de speler met 1
+            Destroy(collision.gameObject); // Vernietig de vijand
         }
 
         // Controleer of de speler een vijand raakt
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy)
         {
             Debug.Log("Player hit by Enemy");
             TakeDamage(1); // Verminder het aantal levens van de speler met 1
             Destroy(collision.gameObject); // Vernietig de vijand
         }
-    }
+    }    
 }

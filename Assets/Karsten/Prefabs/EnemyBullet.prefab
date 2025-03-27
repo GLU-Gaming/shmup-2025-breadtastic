@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3352134056814060885}
   - component: {fileID: 8377528691879739273}
   - component: {fileID: 595027359701251307}
-  - component: {fileID: 4519145949173561408}
-  - component: {fileID: 1181246837554886109}
+  - component: {fileID: -5194784891765356655}
+  - component: {fileID: 2116179424771124315}
+  - component: {fileID: 7930487351307199603}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
@@ -88,7 +89,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4519145949173561408
+--- !u!65 &-5194784891765356655
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +110,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 1.0000001, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1181246837554886109
+--- !u!54 &2116179424771124315
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,3 +137,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7930487351307199603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558319157693925355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d121e86e6672a1349b964d0264e39214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
