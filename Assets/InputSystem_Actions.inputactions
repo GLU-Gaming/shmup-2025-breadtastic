@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "MianAttack",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "2776c80d-3c14-4091-8c56-d04ced07a2b0",
                     "expectedControlType": "",
                     "processors": "",
@@ -25,11 +25,11 @@
                 },
                 {
                     "name": "Attack",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "a325f21e-df1a-49f3-9e9e-c0e2e84cf5f8",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 },
                 {
@@ -112,7 +112,7 @@
                 {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -134,7 +134,7 @@
                 {
                     "name": "",
                     "id": "68d5a795-f600-4e9a-9bd4-53e75cd4d3f8",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "Hold",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -156,7 +156,7 @@
                 {
                     "name": "",
                     "id": "13389d2c-121d-4ac9-8dbf-5762020d2864",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "Hold",
                     "processors": "",
                     "groups": ";Gamepad",
