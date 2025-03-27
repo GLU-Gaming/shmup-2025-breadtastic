@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
+
 public class BulletShoot : MonoBehaviour
 {
     public GameObject bulletPrefab; // De prefab van de kogel
@@ -45,8 +46,13 @@ public class BulletShoot : MonoBehaviour
         }
 
 
+
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
         if (Input.GetMouseButtonDown(1) && Time.time >= nextLaserTime)
+
+        // Controleer of de rechtermuisknop is ingedrukt
+        if (buttonSecondary != 0)
+
 
         // Controleer of de rechtermuisknop is ingedrukt
         if (buttonSecondary != 0)
