@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 
 
+
 public class BulletShoot : MonoBehaviour
 {
     public GameObject bulletPrefab; // De prefab van de kogel
