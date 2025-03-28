@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6020422677971754686, guid: f0460bf661013664e805117a6bf99ca2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6397088580485121028, guid: f0460bf661013664e805117a6bf99ca2, type: 3}
       propertyPath: m_Name
       value: 'donut enemy '
