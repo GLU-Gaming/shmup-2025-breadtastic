@@ -592,6 +592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OvenOpen
       objectReference: {fileID: 0}
+    - target: {fileID: 5672217568223421136, guid: 1fa4c55f52dc670468a421235db2e77d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7856645403329170731, guid: 1fa4c55f52dc670468a421235db2e77d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.476
@@ -749,6 +753,10 @@ PrefabInstance:
     - target: {fileID: 4466757100166877600, guid: e63bb5b31aa04b04ebc6cc1ccd4ae728, type: 3}
       propertyPath: m_Name
       value: Oven
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466757100166877600, guid: e63bb5b31aa04b04ebc6cc1ccd4ae728, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
