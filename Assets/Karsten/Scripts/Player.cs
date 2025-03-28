@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
-        if (lives <= 0)
+        if (lives <= 0 && onDead)
         {
             Debug.Log("dead");
             onDead.Dead(Isdead);
