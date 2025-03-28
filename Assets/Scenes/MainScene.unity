@@ -329,6 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1760948407}
   - component: {fileID: 1760948408}
+  - component: {fileID: 1760948409}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -369,6 +370,19 @@ MonoBehaviour:
   verticalSpacing: 2
   spawnAreaHeight: 10
   initialEnemyCount: 3
+--- !u!114 &1760948409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760948406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36af83d8673dcee4bac4aa3d4754cffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerDeadEnd: 3
 --- !u!1 &1784957172
 GameObject:
   m_ObjectHideFlags: 0
