@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,8 +10,7 @@ public class Player : MonoBehaviour
         lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
         if (lives <= 0)
         {
-            // Logica voor wanneer de speler sterft
-            Debug.Log("Player is dead!");
+            Dead();
         }
     }
 
@@ -35,5 +35,10 @@ public class Player : MonoBehaviour
             TakeDamage(1); // Verminder het aantal levens van de speler met 1
             Destroy(collision.gameObject); // Vernietig de vijand
         }
-    }    
+    } 
+    
+    private void Dead()
+    {
+        SceneManager.LoadScene("Retry");
+    }
 }
