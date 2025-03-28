@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 9f644490b5dc4fd49824249bc2990ec4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Retry.unity
     guid: b3b368e1c28e782499b24c6b1653176f
   - enabled: 0
