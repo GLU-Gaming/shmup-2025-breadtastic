@@ -6,6 +6,8 @@ public class ChargingEnemy : Enemy
     public float chargeSpeed = 5.0f; // De snelheid waarmee de vijand naar de speler chargeert
     private Transform playerTransform;
 
+    public static event Action<GameObject> OnEnemyDeath;
+
     void Start()
     {
         // Stel de huidige gezondheid in op een lagere waarde
@@ -45,6 +47,9 @@ public class ChargingEnemy : Enemy
             {
                 player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
             }
+
+            // Activeer de sterfgebeurtenis
+            OnEnemyDeath?.Invoke(gameObject);
 
             // Vernietig de vijand
             Destroy(gameObject);

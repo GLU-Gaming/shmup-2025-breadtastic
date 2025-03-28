@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public int damage = 10; // De schade die de kogel toebrengt
+    public int damage = 2; // De schade die de kogel toebrengt
 
     void OnCollisionEnter(Collision collision)
     {

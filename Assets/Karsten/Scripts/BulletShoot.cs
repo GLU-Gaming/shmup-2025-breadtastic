@@ -28,16 +28,7 @@ public class BulletShoot : MonoBehaviour
 
     void Update()
     {
-        // Update de cooldown-timer voor de laser
-        if (Time.time < nextLaserTime)
-        {
-            float remainingCooldown = nextLaserTime - Time.time;
-            laserCooldownImage.fillAmount = 1 - (remainingCooldown / laserCooldown);
-        }
-        else
-        {
-            laserCooldownImage.fillAmount = 1;
-        }
+
 
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
         if (buttonMain != 0 && Time.time >= nextFireTime)
@@ -90,7 +81,7 @@ public class BulletShoot : MonoBehaviour
     void Shoot()
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -106,7 +97,7 @@ public class BulletShoot : MonoBehaviour
     void ShootBullet()
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -116,13 +107,13 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Vernietig de kogel na 1.7 seconden
-        Destroy(bullet, 1.7f);
+        Destroy(bullet, 2.5f);
     }
 
     void ShootLaser()
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -132,7 +123,7 @@ public class BulletShoot : MonoBehaviour
         }
 
         // Vernietig de kogel na 1.7 seconden
-        Destroy(bullet, 1.7f);
+        Destroy(bullet, 2.5f);
     }
 
     public void OnMianAttack(InputValue value)

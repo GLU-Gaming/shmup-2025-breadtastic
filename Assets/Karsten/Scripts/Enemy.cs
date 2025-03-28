@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         Debug.Log($"EnemyBulletSpawnpoint Position: {EnemyBulletSpawnpoint.position}, Rotation: {EnemyBulletSpawnpoint.rotation}");
 
         // Maak een nieuwe kogel aan op de positie van de EnemyBulletSpawnpoint
-        GameObject bullet = Instantiate(bulletPrefab, EnemyBulletSpawnpoint.position, EnemyBulletSpawnpoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, EnemyBulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
 
         // Debug log to check the position of the instantiated bullet
         Debug.Log($"Bullet Position after Instantiation: {bullet.transform.position}");

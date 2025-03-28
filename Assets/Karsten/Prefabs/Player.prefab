@@ -175,6 +175,9 @@ MonoBehaviour:
   laserSpeed: 30
   fireRate: 0.01
   bulletCooldown: 0.5
+  laserCooldown: 10
+  laserDuration: 2
+  laserCooldownImage: {fileID: 0}
 --- !u!114 &8329239486765909255
 MonoBehaviour:
   m_ObjectHideFlags: 0
