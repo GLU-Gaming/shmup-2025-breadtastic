@@ -27,9 +27,7 @@ public class BulletShoot : MonoBehaviour
     private float buttonSecondary = 0;
 
     void Update()
-    {
-
-
+    { 
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
         if (buttonMain != 0 && Time.time >= nextFireTime)
         {
