@@ -4,13 +4,22 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int lives = 15; // Aantal levens van de speler
+    private OnDead onDead;
+    public bool Isdead = true;
+
+    private void Start()
+    {
+        onDead = FindFirstObjectByType<OnDead>();
+    }
 
     public void TakeDamage(int damage)
     {
         lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
         if (lives <= 0)
         {
-            Dead();
+            Debug.Log("dead");
+            onDead.Dead(Isdead);
+            Destroy(gameObject);
         }
     }
 
@@ -36,9 +45,4 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject); // Vernietig de vijand
         }
     } 
-    
-    private void Dead()
-    {
-        SceneManager.LoadScene("Retry");
-    }
 }
