@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  maxHealth: 100
+  maxHealth: 50
   bulletPrefab: {fileID: 558319157693925355, guid: 1b47c1f2b9c2e974e99b508cb1993d59, type: 3}
   EnemyBulletSpawnpoint: {fileID: 2235351869626489285}
   bulletSpeed: 10

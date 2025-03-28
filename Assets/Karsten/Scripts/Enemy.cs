@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 1.0f; // De snelheid van de vijand
-    public int maxHealth = 100; // De maximale gezondheid van de vijand
+    public int maxHealth = 50; // De maximale gezondheid van de vijand
     public GameObject bulletPrefab; // De prefab van de kogel
     public Transform EnemyBulletSpawnpoint; // Het punt waar de kogel wordt gespawned
     public float bulletSpeed = 5.0f; // De snelheid van de kogel
@@ -36,14 +36,8 @@ public class Enemy : MonoBehaviour
 
     public void Shoot()
     {
-        // Debug log to check the position and rotation of the EnemyBulletSpawnpoint
-        Debug.Log($"EnemyBulletSpawnpoint Position: {EnemyBulletSpawnpoint.position}, Rotation: {EnemyBulletSpawnpoint.rotation}");
-
         // Maak een nieuwe kogel aan op de positie van de EnemyBulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, EnemyBulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
-
-        // Debug log to check the position of the instantiated bullet
-        Debug.Log($"Bullet Position after Instantiation: {bullet.transform.position}");
 
         // Voeg snelheid toe aan de kogel in de voorwaartse richting van de EnemyBulletSpawnpoint
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -51,9 +45,6 @@ public class Enemy : MonoBehaviour
         {
             rb.linearVelocity = EnemyBulletSpawnpoint.right * -bulletSpeed;
         }
-
-        // Debug log to check the velocity of the bullet
-        Debug.Log($"Bullet Velocity: {rb.linearVelocity}");
 
         // Vernietig de kogel na 2 seconden
         Destroy(bullet, 4.0f);
@@ -79,45 +70,5 @@ public class Enemy : MonoBehaviour
 
         // Vernietig de vijand
         Destroy(gameObject);
-    }
-
-    void OnTriggerEnter(Collider collision)
-    {
-        // Controleer of de vijand de speler raakt
-        if (collision.CompareTag("Player"))
-        {
-            // Breng schade toe aan de speler
-            Player player = collision.GetComponent<Player>();
-            if (player != null)
-            {
-                player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
-            }
-
-            // Vernietig de vijand
-            Destroy(gameObject);
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"EnemyBullet collided with: {collision.gameObject.name}");
-
-        // Controleer of de kogel de speler raakt
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("EnemyBullet hit the Player");
-
-            // Breng schade toe aan de speler
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null)
-            {
-                int damage = 1; // Defineer de schade
-                player.TakeDamage(damage);
-                Debug.Log($"Player took {damage} damage, remaining lives: {player.lives}");
-            }
-
-            // Vernietig de kogel
-            Destroy(gameObject);
-        }
     }
 }

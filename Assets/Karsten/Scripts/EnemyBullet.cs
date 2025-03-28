@@ -20,7 +20,7 @@ public class EnemyBullet : MonoBehaviour
             Player player = collision.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                int damage = 1; // Defineer de schade
+                int damage = 2; // Defineer de schade
                 player.TakeDamage(damage);
                 Debug.Log($"Player took {damage} damage, remaining lives: {player.lives}");
             }

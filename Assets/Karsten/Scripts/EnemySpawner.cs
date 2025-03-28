@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; // De prefab van de standaard vijand
     public GameObject chargingEnemyPrefab; // De prefab van de charging vijand
-    public float spawnXPosition = 15.0f; // De X-positie waar de vijanden spawnen
+    public float spawnXPosition = 11.0f; // De X-positie waar de vijanden spawnen
     public float verticalSpacing = 2.0f; // De verticale afstand tussen de vijanden
     public float spawnAreaHeight = 10.0f; // De hoogte van het spawngebied
     public int initialEnemyCount = 3; // Het aantal vijanden in de eerste ronde

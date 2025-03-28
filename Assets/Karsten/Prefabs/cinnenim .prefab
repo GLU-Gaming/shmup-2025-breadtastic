@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.9612297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.0814852
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.14085226
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -46,6 +58,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 042579c96ec15d240bbe1e2623df28a5, type: 3}
@@ -117,8 +133,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.033657, y: 2.4330246, z: 1.422809}
+  m_Center: {x: -0.11746097, y: 0.7165123, z: 0.21140432}
 --- !u!114 &-1145492183632235978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  maxHealth: 100
+  maxHealth: 30
   bulletPrefab: {fileID: 0}
   EnemyBulletSpawnpoint: {fileID: 0}
   bulletSpeed: 5
