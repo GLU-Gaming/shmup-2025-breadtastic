@@ -40,10 +40,7 @@ public class BulletShoot : MonoBehaviour
 
 
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
-        if (Input.GetMouseButtonDown(1) && Time.time >= nextLaserTime)
-
-        // Controleer of de rechtermuisknop is ingedrukt
-        if (buttonSecondary != 0)
+        if (buttonSecondary != 0 && Time.time >= nextLaserTime)
 
 
         // Controleer of de rechtermuisknop is ingedrukt
@@ -131,7 +128,7 @@ public class BulletShoot : MonoBehaviour
         buttonMain = value.Get<float>();
     }
 
-    public void OnSecondaryAttack(InputValue Value)
+    public void OnAttack(InputValue Value)
     {
         buttonSecondary = Value.Get<float>();
     }
