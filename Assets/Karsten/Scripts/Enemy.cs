@@ -4,14 +4,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 1.0f; // De snelheid van de vijand
+    public float verticalSpeed = 1.0f; // De verticale snelheid van de vijand
+    public float verticalAmplitude = 1.0f; // De amplitude van de verticale beweging
     public int maxHealth = 50; // De maximale gezondheid van de vijand
     public GameObject bulletPrefab; // De prefab van de kogel
     public Transform EnemyBulletSpawnpoint; // Het punt waar de kogel wordt gespawned
     public float bulletSpeed = 5.0f; // De snelheid van de kogel
-    public float fireRate = 2.0f; // De tijd tussen het afvuren van kogels
+    public float minFireRate = 1.0f; // De minimale tijd tussen het afvuren van kogels
+    public float maxFireRate = 3.0f; // De maximale tijd tussen het afvuren van kogels
 
-    private int currentHealth;
-    private float nextFireTime = 0f;
+    public int currentHealth;
+    public float nextFireTime = 0f;
+    public float initialYPosition;
 
     public event Action<GameObject> OnEnemyDeath; // Gebeurtenis die wordt geactiveerd wanneer de vijand sterft
 
@@ -19,19 +23,27 @@ public class Enemy : MonoBehaviour
     {
         // Stel de huidige gezondheid in op de maximale gezondheid
         currentHealth = maxHealth;
+        initialYPosition = transform.position.y;
+        SetNextFireTime();
     }
 
     void Update()
     {
-        // Beweeg de vijand naar links
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        // Beweeg de vijand naar links en voeg verticale beweging toe
+        float newYPosition = initialYPosition + Mathf.Sin(Time.time * verticalSpeed) * verticalAmplitude;
+        transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, newYPosition, transform.position.z);
 
         // Controleer of het tijd is om te schieten
         if (Time.time >= nextFireTime)
         {
             Shoot();
-            nextFireTime = Time.time + fireRate;
+            SetNextFireTime();
         }
+    }
+
+    void SetNextFireTime()
+    {
+        nextFireTime = Time.time + UnityEngine.Random.Range(minFireRate, maxFireRate);
     }
 
     public void Shoot()

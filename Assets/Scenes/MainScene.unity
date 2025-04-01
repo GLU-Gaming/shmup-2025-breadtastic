@@ -517,6 +517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276910297576091446, guid: 6d62b00f0f6f2654b90328f2e4e53d45, type: 3}
+      propertyPath: lives
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6330028468017393111, guid: 6d62b00f0f6f2654b90328f2e4e53d45, type: 3}
       propertyPath: m_Name
       value: Player
@@ -692,9 +696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
   chargingEnemyPrefab: {fileID: 2456762206953608762, guid: 0824b5da27a863e49b931c2d8d51531f, type: 3}
+  fastShootingEnemyPrefab: {fileID: 412045020001668862, guid: ca0ef75086e603749afaa2e983331550, type: 3}
   spawnXPosition: 11
-  verticalSpacing: 4
-  spawnAreaHeight: 10
+  verticalSpacing: 2
+  spawnAreaHeight: 8
   initialEnemyCount: 3
 --- !u!114 &1760948409
 MonoBehaviour:
