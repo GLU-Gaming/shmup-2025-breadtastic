@@ -1,17 +1,18 @@
 using System;
 using UnityEngine;
 
-public class ChargingEnemy : Enemy
+public class ChargingEnemy : MonoBehaviour
 {
     public float chargeSpeed = 5.0f; // De snelheid waarmee de vijand naar de speler chargeert
     private Transform playerTransform;
+    private int maxHealth;
 
     public static event Action<GameObject> OnEnemyDeath;
 
     void Start()
     {
         // Stel de huidige gezondheid in op een lagere waarde
-        SetCurrentHealth(maxHealth / 2);
+        SetCurrentHealth(maxHealth = maxHealth);
 
         // Zoek de speler in de scene
         GameObject player = GameObject.FindGameObjectWithTag("Player");

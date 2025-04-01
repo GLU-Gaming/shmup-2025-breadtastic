@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1079791266681279556}
   - component: {fileID: 2153970745066078022}
-  - component: {fileID: 3497321459105170416}
-  - component: {fileID: 549194805374651685}
+  - component: {fileID: 9176912665349343785}
+  - component: {fileID: -1188776917602775145}
   m_Layer: 0
   m_Name: Cupcake
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 412045020001668862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.91, y: -1.28, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -59,7 +59,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5382946, y: 1.9, z: 1.3365862}
   m_Center: {x: 0.26951492, y: 1.21, z: -0.022165328}
---- !u!114 &3497321459105170416
+--- !u!114 &9176912665349343785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,19 +71,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b2796196f282d418b2f75efb6cead4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   verticalSpeed: 1
   verticalAmplitude: 1
-  maxHealth: 50
-  bulletPrefab: {fileID: 8133673651300792741, guid: c0efd6b2c4f734945b114947a8bb6275, type: 3}
+  maxHealth: 10
+  bulletPrefab: {fileID: 558319157693925355, guid: 1b47c1f2b9c2e974e99b508cb1993d59, type: 3}
   EnemyBulletSpawnpoint: {fileID: 270477000708238584}
   bulletSpeed: 5
   minFireRate: 1
   maxFireRate: 3
-  currentHealth: 0
+  currentHealth: 10
   nextFireTime: 0
   initialYPosition: 0
---- !u!54 &549194805374651685
+--- !u!54 &-1188776917602775145
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &659030879414616967
 GameObject:
@@ -475,15 +475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.41
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.661
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalRotation.w
