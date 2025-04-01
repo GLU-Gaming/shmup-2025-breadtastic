@@ -240,6 +240,63 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &642966799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 412045020001668862, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_Name
+      value: Cupcake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
 --- !u!1 &1145947938
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,9 +692,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
   chargingEnemyPrefab: {fileID: 2456762206953608762, guid: 0824b5da27a863e49b931c2d8d51531f, type: 3}
+  fastShootingEnemyPrefab: {fileID: 412045020001668862, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
   spawnXPosition: 11
   verticalSpacing: 4
-  spawnAreaHeight: 10
+  spawnAreaHeight: 9
   initialEnemyCount: 3
 --- !u!114 &1760948409
 MonoBehaviour:
@@ -861,3 +919,4 @@ SceneRoots:
   - {fileID: 1634644665}
   - {fileID: 1145947943}
   - {fileID: 3967030386731629174}
+  - {fileID: 642966799}
