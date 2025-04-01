@@ -75,16 +75,14 @@ MonoBehaviour:
   verticalSpeed: 1
   verticalAmplitude: 1
   maxHealth: 50
-  bulletPrefab: {fileID: 0}
-  EnemyBulletSpawnpoint: {fileID: 0}
+  bulletPrefab: {fileID: 8133673651300792741, guid: c0efd6b2c4f734945b114947a8bb6275, type: 3}
+  EnemyBulletSpawnpoint: {fileID: 270477000708238584}
   bulletSpeed: 5
   minFireRate: 1
   maxFireRate: 3
   currentHealth: 0
   nextFireTime: 0
   initialYPosition: 0
-  minFireRate: 0.5
-  maxFireRate: 1.5
 --- !u!54 &549194805374651685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -477,15 +475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.617655
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1999998
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.661
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalRotation.w
