@@ -29,7 +29,7 @@ public class BulletShoot : MonoBehaviour
     void Update()
     { 
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
-        if (buttonMain != 0 && Time.time >= nextFireTime)
+        if (buttonMain != 0 && Time.time >= nextFireTime  )
         {
             ShootBullet();
             nextFireTime = Time.time + bulletCooldown;
@@ -38,11 +38,11 @@ public class BulletShoot : MonoBehaviour
 
 
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
-        if (buttonSecondary != 0 && Time.time >= nextLaserTime)
+        if (buttonSecondary != 0 && Time.time >= nextLaserTime  )
 
 
         // Controleer of de rechtermuisknop is ingedrukt
-        if (buttonSecondary != 0)
+        if (buttonSecondary != 0  )
 
         {
             if (!isFiring)

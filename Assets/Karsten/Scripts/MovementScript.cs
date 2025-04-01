@@ -47,7 +47,10 @@ public class MovementScript : MonoBehaviour
         Move();
     }
 
-    private void Move() => rb.AddForce(new Vector3(speed * moveInput.x, speed * moveInput.y, 0));
+    private void Move()
+    {
+        rb.AddForce(new Vector3(speed * moveInput.x, speed * moveInput.y, 0));
+    }
 
     public void OnMove(InputValue value)
     {
