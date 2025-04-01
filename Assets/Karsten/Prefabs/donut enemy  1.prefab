@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 5114149690097230127}
   - component: {fileID: 122272504805305948}
   m_Layer: 0
-  m_Name: 'donut enemy '
+  m_Name: donut enemy  1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

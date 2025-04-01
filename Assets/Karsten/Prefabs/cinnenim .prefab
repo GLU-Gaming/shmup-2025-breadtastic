@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  maxHealth: 30
+  maxHealth: 10
   bulletPrefab: {fileID: 0}
   EnemyBulletSpawnpoint: {fileID: 0}
   bulletSpeed: 5
