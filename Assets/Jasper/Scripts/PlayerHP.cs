@@ -4,14 +4,11 @@ using UnityEngine.Rendering.UI;
 
 public class Helt : MonoBehaviour
 {
-    [SerializeField] private int MaxHP;
     private int CurentHP;
     [SerializeField] private List<GameObject> HPUIList = new List<GameObject>();
-    private int DemageTake;
 
     void Start()
     {
-        CurentHP = MaxHP;
         CurentHP = HPUIList.Count;
         HPBar();
     }

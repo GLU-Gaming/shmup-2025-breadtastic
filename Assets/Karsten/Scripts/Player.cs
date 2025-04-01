@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private OnDead onDead;
     public bool Isdead = true;
 
+
     private void Start()
     {
         onDead = FindFirstObjectByType<OnDead>();
