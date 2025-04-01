@@ -58,7 +58,7 @@ MonoBehaviour:
   bulletSpeed: 10
   laserSpeed: 30
   fireRate: 0.01
-  bulletCooldown: 0.5
+  bulletCooldown: 0.35
   laserCooldown: 10
   laserDuration: 2
   laserCooldownImage: {fileID: 0}
