@@ -861,6 +861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandleSet
       objectReference: {fileID: 0}
+    - target: {fileID: 4982684950020662655, guid: 9940e72b48cdf2a439be39ecdb0664d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6545890922839731217, guid: 9940e72b48cdf2a439be39ecdb0664d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.72
@@ -917,6 +921,10 @@ PrefabInstance:
     - target: {fileID: 6335314207377693204, guid: 0a5a2f0cc1540cf428a8c662a653c072, type: 3}
       propertyPath: m_Name
       value: WeddingCake
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335314207377693204, guid: 0a5a2f0cc1540cf428a8c662a653c072, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6674438105967870126, guid: 0a5a2f0cc1540cf428a8c662a653c072, type: 3}
       propertyPath: m_LocalScale.x
