@@ -15,46 +15,61 @@ public class Helt : MonoBehaviour
 
     void Start()
     {
-        CurentHP = MaxHP;
         CurentUI = 1+(MaxHP - 1)/2;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        TestDemageEnamy Demage = other.GetComponent<TestDemageEnamy>();
+        Debug.Log($"Player collided with: {collision.gameObject.name}");
 
-        if (Demage)
+        // Controleer of de speler een vijandelijke kogel raakt
+        EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
+        if (enemyBullet)
         {
-            CurentHP -= Demage.EnemyDemage;
+            Debug.Log("Player hit by Enemy");
+            CurentHP = enemyBullet.damage;
             HPBar();
+            Destroy(collision.gameObject); // Vernietig de vijand
+        }
+
+        // Controleer of de speler een vijand raakt
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy)
+        {
+            Debug.Log("Player hit by Enemy");
+            CurentHP = 1;
+            HPBar();
+            Destroy(collision.gameObject); // Vernietig de vijand
         }
     }
 
     private void HPBar()
     {
-        if (half)
+        for(int i = 0; i < CurentHP; i++)
         {
-            Image UI = HPUIList[CurentUI - 1].GetComponent<Image>();
-            UI.fillAmount = 0.5f;
-            half = false;
-
-            Debug.Log(UI.fillAmount);
-        }
-        else
-        {
-            for (int i = 0; i < HPUIList.Count; i++)
+            if (half)
             {
-                HPUIList[i].SetActive(false);
+                Image UI = HPUIList[CurentUI - 1].GetComponent<Image>();
+                UI.fillAmount = 0.5f;
+                half = false;
             }
-
-            CurentUI -= 1;
-
-            for (int i = 0; i < CurentUI; i++)
+            else
             {
-                HPUIList[i].SetActive(true);
+                for (int j = 0; j < HPUIList.Count; j++)
+                {
+                    HPUIList[j].SetActive(false);
+                }
+
+                CurentUI -= 1;
+
+                for (int j = 0; j < CurentUI; j++)
+                {
+                    HPUIList[j].SetActive(true);
+                }
+                half = true;
+                Debug.Log("okay");
             }
-            half = true;
+            broken.transform.position -= new Vector3(End, 0);
         }
-        broken.transform.position -= new Vector3(End, 0);
     }
 }
