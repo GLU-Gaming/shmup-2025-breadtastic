@@ -18,19 +18,21 @@ MonoBehaviour:
   m_PlatformId: 4e3c793746204150860bf175a9a41a05
   m_PlatformBuildProfile:
     rid: 3015733347560718336
-  m_OverrideGlobalSceneList: 0
+  m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/Start.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/MainScene.unity
+    m_path: Assets/Scenes/MainScene 2.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Retry.unity
   - m_enabled: 0
     m_path: Assets/Scenes/SampleScene.unity
-  m_ScriptingDefines:
-  - Scenes/Start
-  - 
+  - m_enabled: 0
+    m_path: Assets/Scenes/BossScene.unity
+  - m_enabled: 0
+    m_path: Assets/Scenes/MainScene.unity
+  m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
   references:
