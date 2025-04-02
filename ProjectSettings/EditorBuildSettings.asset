@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: bbb4070aa6976654cb0db19e6d601574
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 9f644490b5dc4fd49824249bc2990ec4
+    path: Assets/Scenes/MainScene 2.unity
+    guid: 88f89fa4a9658ed438c5651cb3351fc5
   - enabled: 1
     path: Assets/Scenes/Retry.unity
     guid: b3b368e1c28e782499b24c6b1653176f

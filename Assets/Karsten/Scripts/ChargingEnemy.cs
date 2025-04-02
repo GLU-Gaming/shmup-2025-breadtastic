@@ -10,14 +10,19 @@ public class ChargingEnemy : Enemy
 
     void Start()
     {
-        // Stel de huidige gezondheid in op een lagere waarde
-        SetCurrentHealth(maxHealth / 2);
+        // Stel de huidige gezondheid in op de maximale gezondheid
+        SetCurrentHealth(maxHealth);
 
         // Zoek de speler in de scene
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerTransform = player.transform;
+            Debug.Log("Player found and playerTransform set.");
+        }
+        else
+        {
+            Debug.LogError("Player not found. Ensure the player GameObject is tagged as 'Player'.");
         }
     }
 
@@ -33,10 +38,10 @@ public class ChargingEnemy : Enemy
 
     private void SetCurrentHealth(int health)
     {
-        typeof(Enemy).GetField("currentHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(this, health);
+        currentHealth = health;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider collision)
     {
         // Controleer of de vijand de speler raakt
         if (collision.CompareTag("Player"))

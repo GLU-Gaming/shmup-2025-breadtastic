@@ -635,9 +635,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
   chargingEnemyPrefab: {fileID: 2456762206953608762, guid: 0824b5da27a863e49b931c2d8d51531f, type: 3}
+  fastShootingEnemyPrefab: {fileID: 412045020001668862, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
   spawnXPosition: 11
   verticalSpacing: 4
-  spawnAreaHeight: 10
+  spawnAreaHeight: 9
   initialEnemyCount: 3
 --- !u!114 &1760948409
 MonoBehaviour:
@@ -800,6 +801,10 @@ PrefabInstance:
     - target: {fileID: 3008667744921450730, guid: ca5c6a928acce8543809a8357a35e9bf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099779812413740890, guid: ca5c6a928acce8543809a8357a35e9bf, type: 3}
+      propertyPath: laserCooldown
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4099779812413740890, guid: ca5c6a928acce8543809a8357a35e9bf, type: 3}
       propertyPath: bulletCooldown
