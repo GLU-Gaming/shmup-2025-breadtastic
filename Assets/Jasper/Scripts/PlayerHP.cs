@@ -1,16 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
+using UnityEngine.UI;
 
 public class Helt : MonoBehaviour
 {
+    [SerializeField] private int MaxHP = 15;
+    private bool half = false;
     private int CurentHP;
     [SerializeField] private List<GameObject> HPUIList = new List<GameObject>();
+    public int CurentUI;
+    [SerializeField] GameObject broken;
+    [SerializeField] private float End = 27.5f;
 
     void Start()
     {
-        CurentHP = HPUIList.Count;
-        HPBar();
+        CurentHP = MaxHP;
+        CurentUI = 1+(MaxHP - 1)/2;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,14 +32,29 @@ public class Helt : MonoBehaviour
 
     private void HPBar()
     {
-        for(int i = 0; i < HPUIList.Count; i++)
+        if (half)
         {
-            HPUIList[i].SetActive(false);
-        }
+            Image UI = HPUIList[CurentUI - 1].GetComponent<Image>();
+            UI.fillAmount = 0.5f;
+            half = false;
 
-        for(int i = 0; i < CurentHP; i++)
-        {
-            HPUIList[i].SetActive(true);
+            Debug.Log(UI.fillAmount);
         }
+        else
+        {
+            for (int i = 0; i < HPUIList.Count; i++)
+            {
+                HPUIList[i].SetActive(false);
+            }
+
+            CurentUI -= 1;
+
+            for (int i = 0; i < CurentUI; i++)
+            {
+                HPUIList[i].SetActive(true);
+            }
+            half = true;
+        }
+        broken.transform.position -= new Vector3(End, 0);
     }
 }
