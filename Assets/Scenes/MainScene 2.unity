@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupcake
       objectReference: {fileID: 0}
+    - target: {fileID: 549194805374651685, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 1079791266681279556, guid: c23ae67d029d3c54a9ea8e5c9f14b9fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.91
