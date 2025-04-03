@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 549194805374651685}
   m_Layer: 0
   m_Name: Cupcake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   maxHealth: 20
   bulletPrefab: {fileID: 558319157693925355, guid: 1b47c1f2b9c2e974e99b508cb1993d59, type: 3}
   EnemyBulletSpawnpoint: {fileID: 270477000708238584}
-  bulletSpeed: 5
+  bulletSpeed: 10
   minFireRate: 1
   maxFireRate: 3
   currentHealth: 0

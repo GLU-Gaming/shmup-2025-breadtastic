@@ -104,4 +104,10 @@ public class EnemySpawner : MonoBehaviour
         // Verwijder de vijand uit de lijst wanneer deze sterft
         enemies.Remove(enemy);
     }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        // Verwijder de vijand uit de lijst
+        enemies.Remove(enemy);
+    }
 }

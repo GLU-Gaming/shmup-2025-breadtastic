@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float bulletSpeed = 5.0f; // De snelheid van de kogel
     public float minFireRate = 1.0f; // De minimale tijd tussen het afvuren van kogels
     public float maxFireRate = 3.0f; // De maximale tijd tussen het afvuren van kogels
+    public int scoreValue = 10; // De scorewaarde van de vijand
 
     public int currentHealth;
     public float nextFireTime = 0f;
@@ -77,6 +78,9 @@ public class Enemy : MonoBehaviour
     // Functie om de vijand te vernietigen
     void Die()
     {
+        // Add score when the enemy dies
+        ScoreManager.instance.AddScore(scoreValue);
+
         // Activeer de sterfgebeurtenis
         OnEnemyDeath?.Invoke(gameObject);
 
