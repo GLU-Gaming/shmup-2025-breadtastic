@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
@@ -13,9 +14,14 @@ public class Helt : MonoBehaviour
     [SerializeField] GameObject broken;
     [SerializeField] private float End = 27.5f;
 
+    private Rumble rumble;
+
     void Start()
     {
         CurentUI = 1+(MaxHP - 1)/2;
+
+        rumble = FindFirstObjectByType<Rumble>();
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -27,9 +33,13 @@ public class Helt : MonoBehaviour
         if (enemyBullet)
         {
             Debug.Log("Player hit by Enemy");
+            if (rumble)
+            {
+                rumble.StartRumble(0.3f, 0.3f, 0.5f);
+            }
             CurentHP = enemyBullet.damage;
             HPBar();
-            Destroy(collision.gameObject); // Vernietig de vijand
+            Destroy(collision.gameObject); // Vernietig de vijand            
         }
 
         // Controleer of de speler een vijand raakt
@@ -37,6 +47,10 @@ public class Helt : MonoBehaviour
         if (enemy)
         {
             Debug.Log("Player hit by Enemy");
+            if (rumble)
+            {
+                rumble.StartRumble(0.3f, 0.3f, 0.5f);
+            }
             CurentHP = 1;
             HPBar();
             Destroy(collision.gameObject); // Vernietig de vijand

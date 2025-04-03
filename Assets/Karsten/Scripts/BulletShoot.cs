@@ -26,10 +26,18 @@ public class BulletShoot : MonoBehaviour
     private float buttonMain = 0;
     private float buttonSecondary = 0;
 
+    private Rumble rumble;
+
+    private void Start()
+    {
+        rumble = FindFirstObjectByType<Rumble>();
+    }
+
+
     void Update()
-    { 
+    {
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
-        if (buttonMain != 0 && Time.time >= nextFireTime  )
+        if (buttonMain != 0 && Time.time >= nextFireTime)
         {
             ShootBullet();
             nextFireTime = Time.time + bulletCooldown;
@@ -38,18 +46,18 @@ public class BulletShoot : MonoBehaviour
 
 
         // Controleer of de rechtermuisknop is ingedrukt en de laser cooldown is verstreken
-        if (buttonSecondary != 0 && Time.time >= nextLaserTime  )
+        if (buttonSecondary != 0 && Time.time >= nextLaserTime)
 
 
-        // Controleer of de rechtermuisknop is ingedrukt
-        if (buttonSecondary != 0  )
+            // Controleer of de rechtermuisknop is ingedrukt
+            if (buttonSecondary != 0)
 
-        {
-            if (!isFiring)
             {
-                StartCoroutine(FireLaser());
+                if (!isFiring)
+                {
+                    StartCoroutine(FireLaser());
+                }
             }
-        }
 
         // Controleer of de rechtermuisknop is losgelaten
         if (buttonSecondary == 0)
@@ -93,6 +101,10 @@ public class BulletShoot : MonoBehaviour
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
+        if (rumble)
+        {
+            rumble.StartRumble(0.1f, 0.1f, 0.2f);
+        }
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -109,6 +121,10 @@ public class BulletShoot : MonoBehaviour
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
+        if (rumble)
+        {
+            rumble.StartRumble(0.1f, 0.1f, 0.2f);
+        }
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -129,5 +145,5 @@ public class BulletShoot : MonoBehaviour
     public void OnAttack(InputValue Value)
     {
         buttonSecondary = Value.Get<float>();
-    }
+    }    
 }
