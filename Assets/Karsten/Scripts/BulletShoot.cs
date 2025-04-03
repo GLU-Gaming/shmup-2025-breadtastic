@@ -26,7 +26,7 @@ public class BulletShoot : MonoBehaviour
     private float buttonMain = 0;
     private float buttonSecondary = 0;
 
-    private Rumble rumble;
+    public Rumble rumble;
 
     private void Start()
     {
@@ -103,7 +103,7 @@ public class BulletShoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
         if (rumble)
         {
-            rumble.StartRumble(0.3f, 0f, 0.2f, 0);
+            rumble.StartRumble(0.3f, 0f, 0.2f, 1);
         }
 
         // Voeg snelheid toe aan de kogel
@@ -123,7 +123,7 @@ public class BulletShoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
         if (rumble)
         {
-            rumble.StartRumble(0.3f, 0.1f, 0.2f, 0);
+            rumble.StartRumble(0.3f, 0.1f, 0.2f, 1);
         }
 
         // Voeg snelheid toe aan de kogel

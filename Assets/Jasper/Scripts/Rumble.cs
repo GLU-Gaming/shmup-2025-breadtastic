@@ -9,7 +9,7 @@ public class Rumble : MonoBehaviour
 
     private Coroutine stopRumble;
 
-    public int CurentPriority = 2;
+    public int CurentPriority = 0;
 
     public void StartRumble(float Low, float High, float Duration, int Priority)
     {

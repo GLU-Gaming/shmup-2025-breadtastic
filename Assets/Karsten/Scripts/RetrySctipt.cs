@@ -16,13 +16,12 @@ public class RetrySctipt : MonoBehaviour
 
     public void OnBButton(InputValue value)
     {
+        Application.Quit();
         Debug.Log("B");
-        quit();
     }
-    
+
     public void OnAButton(InputValue value)
     {
-        Debug.Log("A");
-        retry();
+        SceneManager.LoadScene("MainScene 2");
     }
 }
