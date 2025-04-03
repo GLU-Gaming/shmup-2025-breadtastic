@@ -80,6 +80,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff408508-fbbb-4484-a0ac-e3fe47065bf3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""BButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25cddc23-e205-465e-ada2-dc7ba4385cd7"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Gamepad"",
+                    ""action"": ""XButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -250,6 +270,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
         m_GamePlay_AButton = m_GamePlay.FindAction("AButton", throwIfNotFound: true);
         m_GamePlay_BButton = m_GamePlay.FindAction("BButton", throwIfNotFound: true);
+        m_GamePlay_XButton = m_GamePlay.FindAction("XButton", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -322,6 +343,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Pause;
     private readonly InputAction m_GamePlay_AButton;
     private readonly InputAction m_GamePlay_BButton;
+    private readonly InputAction m_GamePlay_XButton;
     public struct GamePlayActions
     {
         private @PlayerInput m_Wrapper;
@@ -332,6 +354,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
         public InputAction @AButton => m_Wrapper.m_GamePlay_AButton;
         public InputAction @BButton => m_Wrapper.m_GamePlay_BButton;
+        public InputAction @XButton => m_Wrapper.m_GamePlay_XButton;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -359,6 +382,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @BButton.started += instance.OnBButton;
             @BButton.performed += instance.OnBButton;
             @BButton.canceled += instance.OnBButton;
+            @XButton.started += instance.OnXButton;
+            @XButton.performed += instance.OnXButton;
+            @XButton.canceled += instance.OnXButton;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -381,6 +407,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @BButton.started -= instance.OnBButton;
             @BButton.performed -= instance.OnBButton;
             @BButton.canceled -= instance.OnBButton;
+            @XButton.started -= instance.OnXButton;
+            @XButton.performed -= instance.OnXButton;
+            @XButton.canceled -= instance.OnXButton;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -406,5 +435,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnAButton(InputAction.CallbackContext context);
         void OnBButton(InputAction.CallbackContext context);
+        void OnXButton(InputAction.CallbackContext context);
     }
 }

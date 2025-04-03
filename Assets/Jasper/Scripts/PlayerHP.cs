@@ -75,7 +75,11 @@ public class Helt : MonoBehaviour
                 }
 
                 CurentUI -= 1;
-                
+
+                if (CurentUI < 0)
+                {
+                    CurentUI = 0;
+                }
 
                 for (int j = 0; j < CurentUI; j++)
                 {
@@ -84,6 +88,7 @@ public class Helt : MonoBehaviour
                 half = true;
                 Debug.Log("okay");
             }
+
             broken.transform.position -= new Vector3(End, 0);
         }
     }
