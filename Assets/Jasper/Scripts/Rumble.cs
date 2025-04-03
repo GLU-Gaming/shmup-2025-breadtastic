@@ -10,6 +10,8 @@ public class Rumble : MonoBehaviour
     private Coroutine stopRumble;
 
     public int CurentPriority = 0;
+    public float CurentLow = 0;
+    public float CurentHigh = 0;
 
     private float ThisDuration = 0f;
     private float ThisDurationTimer = 0f;
@@ -22,8 +24,19 @@ public class Rumble : MonoBehaviour
         {
             pad.SetMotorSpeeds(0f, 0f);
             CurentPriority = 0;
+            CurentLow = 0;
+            CurentHigh = 0; 
         }
 
+        if (PauseMenu.GameIsPaused)
+        {
+            pad.SetMotorSpeeds(0f, 0f);
+        }
+
+        else
+        {
+            pad.SetMotorSpeeds(CurentLow, CurentHigh);
+        }
     }
 
     public void StartRumble(float Low, float High, float Duration, int Priority)
@@ -36,6 +49,10 @@ public class Rumble : MonoBehaviour
                 ThisDurationTimer = 0f;
 
                 CurentPriority = Priority;
+
+                CurentHigh = High;
+
+                CurentLow = Low;
 
                 pad.SetMotorSpeeds(Low, High);
 
