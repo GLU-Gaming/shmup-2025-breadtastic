@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class RetrySctipt : MonoBehaviour
@@ -11,5 +12,17 @@ public class RetrySctipt : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void OnBButton(InputValue value)
+    {
+        Debug.Log("B");
+        quit();
+    }
+    
+    public void OnAButton(InputValue value)
+    {
+        Debug.Log("A");
+        retry();
     }
 }

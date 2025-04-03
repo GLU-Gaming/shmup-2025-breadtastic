@@ -9,15 +9,21 @@ public class Rumble : MonoBehaviour
 
     private Coroutine stopRumble;
 
-    public void StartRumble(float Low, float High, float Duration)
+    public int CurentPriority = 2;
+
+    public void StartRumble(float Low, float High, float Duration, int Priority)
     {
         pad = Gamepad.current;
-
-        if (pad != null)
+        if (Priority >= CurentPriority)
         {
-            pad.SetMotorSpeeds(Low, High);
+            if (pad != null)
+            {            
+                CurentPriority = Priority;
 
-            stopRumble = StartCoroutine(StopRumble(Duration));
+                pad.SetMotorSpeeds(Low, High);
+
+                stopRumble = StartCoroutine(StopRumble(Duration));
+            }
         }
     }
 
@@ -31,5 +37,6 @@ public class Rumble : MonoBehaviour
         }
 
         pad.SetMotorSpeeds(0f, 0f);
+        CurentPriority = 0;
     }
 }

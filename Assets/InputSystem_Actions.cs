@@ -62,6 +62,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8e97e9b-53e2-4fdc-9741-d05e86287e74"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""05c1c9cc-6f35-4797-a2a6-e553ccb7cb2b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -194,6 +212,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse;Gamepad"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1599590e-ae63-4a93-a8e7-121129354825"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Gamepad"",
+                    ""action"": ""AButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e2c689e-009b-4ca1-bc4d-4269bbfba9a1"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Gamepad"",
+                    ""action"": ""BButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -806,6 +846,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_GamePlay_MianAttack = m_GamePlay.FindAction("MianAttack", throwIfNotFound: true);
         m_GamePlay_Attack = m_GamePlay.FindAction("Attack", throwIfNotFound: true);
         m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
+        m_GamePlay_AButton = m_GamePlay.FindAction("AButton", throwIfNotFound: true);
+        m_GamePlay_BButton = m_GamePlay.FindAction("BButton", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -889,6 +931,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_MianAttack;
     private readonly InputAction m_GamePlay_Attack;
     private readonly InputAction m_GamePlay_Pause;
+    private readonly InputAction m_GamePlay_AButton;
+    private readonly InputAction m_GamePlay_BButton;
     public struct GamePlayActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -897,6 +941,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @MianAttack => m_Wrapper.m_GamePlay_MianAttack;
         public InputAction @Attack => m_Wrapper.m_GamePlay_Attack;
         public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
+        public InputAction @AButton => m_Wrapper.m_GamePlay_AButton;
+        public InputAction @BButton => m_Wrapper.m_GamePlay_BButton;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -918,6 +964,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @AButton.started += instance.OnAButton;
+            @AButton.performed += instance.OnAButton;
+            @AButton.canceled += instance.OnAButton;
+            @BButton.started += instance.OnBButton;
+            @BButton.performed += instance.OnBButton;
+            @BButton.canceled += instance.OnBButton;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -934,6 +986,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @AButton.started -= instance.OnAButton;
+            @AButton.performed -= instance.OnAButton;
+            @AButton.canceled -= instance.OnAButton;
+            @BButton.started -= instance.OnBButton;
+            @BButton.performed -= instance.OnBButton;
+            @BButton.canceled -= instance.OnBButton;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -1129,6 +1187,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnMianAttack(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnAButton(InputAction.CallbackContext context);
+        void OnBButton(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

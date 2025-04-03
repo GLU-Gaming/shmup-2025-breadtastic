@@ -35,7 +35,7 @@ public class Helt : MonoBehaviour
             Debug.Log("Player hit by Enemy");
             if (rumble)
             {
-                rumble.StartRumble(0.3f, 0.3f, 0.5f);
+                rumble.StartRumble(0.25f, 1f, 0.5f, 2);
             }
             CurentHP = enemyBullet.damage;
             HPBar();
@@ -49,7 +49,7 @@ public class Helt : MonoBehaviour
             Debug.Log("Player hit by Enemy");
             if (rumble)
             {
-                rumble.StartRumble(0.3f, 0.3f, 0.5f);
+                rumble.StartRumble(0.25f, 1f, 0.5f, 2);
             }
             CurentHP = 1;
             HPBar();
@@ -75,6 +75,7 @@ public class Helt : MonoBehaviour
                 }
 
                 CurentUI -= 1;
+                
 
                 for (int j = 0; j < CurentUI; j++)
                 {
