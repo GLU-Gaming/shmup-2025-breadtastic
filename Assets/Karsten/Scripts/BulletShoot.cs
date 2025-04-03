@@ -26,9 +26,13 @@ public class BulletShoot : MonoBehaviour
     private float buttonMain = 0;
     private float buttonSecondary = 0;
 
-    private Gamepad pad;
+    private Rumble rumble;
 
-    private Coroutine stopRumble;
+    private void Start()
+    {
+        rumble = FindFirstObjectByType<Rumble>();
+    }
+
 
     void Update()
     {
@@ -97,7 +101,10 @@ public class BulletShoot : MonoBehaviour
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
-        Rumble(0.2f, 0.2f, 0.5f);
+        if (rumble)
+        {
+            rumble.StartRumble(0.1f, 0.1f, 0.2f);
+        }
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -114,7 +121,10 @@ public class BulletShoot : MonoBehaviour
     {
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.Euler(0, 0, -90));
-        Rumble(0.2f, 0.2f, 0.5f);
+        if (rumble)
+        {
+            rumble.StartRumble(0.1f, 0.1f, 0.2f);
+        }
 
         // Voeg snelheid toe aan de kogel
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
@@ -135,29 +145,5 @@ public class BulletShoot : MonoBehaviour
     public void OnAttack(InputValue Value)
     {
         buttonSecondary = Value.Get<float>();
-    }
-
-    public void Rumble(float Low, float High, float Duration)
-    {
-        pad = Gamepad.current;
-
-        if (pad != null)
-        {
-            pad.SetMotorSpeeds(Low, High);
-
-            stopRumble = StartCoroutine(StopRumble(Duration));
-        }
-    }
-
-    private IEnumerator StopRumble(float Duration)
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < Duration)
-        {
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        pad.SetMotorSpeeds(0f, 0f);
-    }
+    }    
 }
