@@ -907,8 +907,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RetrySctipt, Assembly-CSharp
+      - m_Target: {fileID: 1151839068}
+        m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
         m_MethodName: retry
         m_Mode: 1
         m_Arguments:
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6083dd7758cf9ee47992f8d7d6f77611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ControlUIShow: 0
   move: {x: 0, y: 0}
   ButtonList:
   - {fileID: 636537515}
@@ -1222,7 +1223,7 @@ MonoBehaviour:
   ImageArrow: {fileID: 671901946}
   state: 0
   active: 0
-  offset: {x: -100, y: 0}
+  offset: {x: -270, y: 0}
   Button: 0
   TimeMove: 0.3
 --- !u!1 &1158871571
@@ -1670,9 +1671,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
-        m_MethodName: ControlsActive
+      - m_Target: {fileID: 1151839068}
+        m_TargetAssemblyTypeName: UIMove, Assembly-CSharp
+        m_MethodName: Control
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1872,8 +1873,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RetrySctipt, Assembly-CSharp
+      - m_Target: {fileID: 1151839068}
+        m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
         m_MethodName: quit
         m_Mode: 1
         m_Arguments:
