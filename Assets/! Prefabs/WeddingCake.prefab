@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 6800599501988985632}
   m_Layer: 0
   m_Name: WeddingCake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,8 +394,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5661570183968047026, guid: 732b88c271b61f843946407c54d2ba3e, type: 3}
   firePoint: {fileID: 1387684029773347702}
   projectileCount: 5
-  spreadAngle: 45
-  fireRate: 2
+  spreadAngle: 70
+  fireRate: 3
   freezeDuration: 2
 --- !u!114 &6800599501988985632
 MonoBehaviour:

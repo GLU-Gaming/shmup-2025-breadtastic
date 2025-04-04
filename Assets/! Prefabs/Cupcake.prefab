@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2153970745066078022}
   - component: {fileID: 3497321459105170416}
   - component: {fileID: 549194805374651685}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cupcake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   bulletSpeed: 10
   minFireRate: 1
   maxFireRate: 3
-  scoreValue: 10
+  scoreValue: 30
   currentHealth: 0
   nextFireTime: 0
   initialYPosition: 0
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5798628079875016696}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: cupcake no balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7335333334586233696}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 5620058493210854515}
   - component: {fileID: 9125621389178858065}
   - component: {fileID: 7724547351870418364}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cupcake+Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 2736114081476022867}
   - component: {fileID: 8770489235060183344}
   - component: {fileID: 6368072514141479443}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Topping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,10 +416,6 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 57c402358d4a4c24899a8521bfedc486, type: 2}
-    - target: {fileID: -7416892769697876995, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: -5285499962029164057, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -428,34 +424,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7d798a547b379fd408c5c577d33cf53a, type: 2}
-    - target: {fileID: -2489834606327730787, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: m_Name
       value: ballons
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 931415867266347279, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317091920661307164, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4908427502282523024, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6317163f64cc6ab4aa825ccb9e376eff, type: 2}
-    - target: {fileID: 5584920616921595675, guid: b3534325578012e49bac8480ec678396, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7266607661347686966, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -484,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4346371230545651228, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalScale.x
@@ -620,34 +596,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: f58e81a95b4abea41a4a2b3fea01867f, type: 2}
-    - target: {fileID: -2455674160170086311, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: -650433988561056430, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: -49513972382164171, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
       propertyPath: m_Name
       value: sprinkle shaker
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2328169485041697687, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: f58e81a95b4abea41a4a2b3fea01867f, type: 2}
-    - target: {fileID: 3215646897027884683, guid: 2d34a581a118e92418480bda9ab82215, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

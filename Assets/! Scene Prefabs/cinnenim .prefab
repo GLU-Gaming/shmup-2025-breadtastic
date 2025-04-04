@@ -227,7 +227,7 @@ MonoBehaviour:
   bulletSpeed: 5
   minFireRate: 1
   maxFireRate: 3
-  scoreValue: 10
+  scoreValue: 15
   currentHealth: 0
   nextFireTime: 0
   initialYPosition: 0
