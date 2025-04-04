@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -29,6 +30,13 @@ public class EnemySpawner : MonoBehaviour
             // Start een nieuwe ronde met meer vijanden
             StartRound(initialEnemyCount + currentRound);
             currentRound++;
+            WaveManager.instance.IncrementWave();
+
+            // Check if wave counter reaches 6
+            if (WaveManager.instance.waveCounter == 6)
+            {
+                LoadBossScene();
+            }
         }
     }
 
@@ -109,5 +117,11 @@ public class EnemySpawner : MonoBehaviour
     {
         // Verwijder de vijand uit de lijst
         enemies.Remove(enemy);
+    }
+
+    void LoadBossScene()
+    {
+        // Load the boss scene
+        SceneManager.LoadScene("BossScene");
     }
 }

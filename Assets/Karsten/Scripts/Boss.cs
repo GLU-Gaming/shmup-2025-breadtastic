@@ -1,8 +1,17 @@
 using UnityEngine;
 
+// Ensure the Boss object has a Collider component
+[RequireComponent(typeof(Collider))]
 public class Boss : MonoBehaviour
 {
     public float health = 100; // Aantal levens van de boss
+
+    void Start()
+    {
+        // Ensure the collider is set to trigger
+        Collider collider = GetComponent<Collider>();
+        collider.isTrigger = true;
+    }
 
     public void TakeDamage(float damage)
     {
