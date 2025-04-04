@@ -73,22 +73,13 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""BButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""d16d3554-3fd8-44d3-b65a-15bc39b45f96"",
-                    ""expectedControlType"": """",
+                    ""name"": ""MoveUI"",
+                    ""type"": ""Value"",
+                    ""id"": ""6fd53884-8beb-4ec6-9535-8204387cbf74"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""XButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""7f0a9d05-87c9-48d5-8fb0-440a40da617b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -237,23 +228,12 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""17f078d6-e9d1-4abf-8bfb-b82d1cdf9f10"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""99a6f0c6-a8f1-48cb-ac15-ef39a284b299"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Gamepad"",
-                    ""action"": ""BButton"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ce6802cb-477b-46ba-8de3-08739696d378"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Gamepad"",
-                    ""action"": ""XButton"",
+                    ""groups"": """",
+                    ""action"": ""MoveUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -269,8 +249,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_GamePlay_Attack = m_GamePlay.FindAction("Attack", throwIfNotFound: true);
         m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
         m_GamePlay_AButton = m_GamePlay.FindAction("AButton", throwIfNotFound: true);
-        m_GamePlay_BButton = m_GamePlay.FindAction("BButton", throwIfNotFound: true);
-        m_GamePlay_XButton = m_GamePlay.FindAction("XButton", throwIfNotFound: true);
+        m_GamePlay_MoveUI = m_GamePlay.FindAction("MoveUI", throwIfNotFound: true);
     }
 
     ~@NewControls()
@@ -342,8 +321,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Attack;
     private readonly InputAction m_GamePlay_Pause;
     private readonly InputAction m_GamePlay_AButton;
-    private readonly InputAction m_GamePlay_BButton;
-    private readonly InputAction m_GamePlay_XButton;
+    private readonly InputAction m_GamePlay_MoveUI;
     public struct GamePlayActions
     {
         private @NewControls m_Wrapper;
@@ -353,8 +331,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_GamePlay_Attack;
         public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
         public InputAction @AButton => m_Wrapper.m_GamePlay_AButton;
-        public InputAction @BButton => m_Wrapper.m_GamePlay_BButton;
-        public InputAction @XButton => m_Wrapper.m_GamePlay_XButton;
+        public InputAction @MoveUI => m_Wrapper.m_GamePlay_MoveUI;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -379,12 +356,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @AButton.started += instance.OnAButton;
             @AButton.performed += instance.OnAButton;
             @AButton.canceled += instance.OnAButton;
-            @BButton.started += instance.OnBButton;
-            @BButton.performed += instance.OnBButton;
-            @BButton.canceled += instance.OnBButton;
-            @XButton.started += instance.OnXButton;
-            @XButton.performed += instance.OnXButton;
-            @XButton.canceled += instance.OnXButton;
+            @MoveUI.started += instance.OnMoveUI;
+            @MoveUI.performed += instance.OnMoveUI;
+            @MoveUI.canceled += instance.OnMoveUI;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -404,12 +378,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @AButton.started -= instance.OnAButton;
             @AButton.performed -= instance.OnAButton;
             @AButton.canceled -= instance.OnAButton;
-            @BButton.started -= instance.OnBButton;
-            @BButton.performed -= instance.OnBButton;
-            @BButton.canceled -= instance.OnBButton;
-            @XButton.started -= instance.OnXButton;
-            @XButton.performed -= instance.OnXButton;
-            @XButton.canceled -= instance.OnXButton;
+            @MoveUI.started -= instance.OnMoveUI;
+            @MoveUI.performed -= instance.OnMoveUI;
+            @MoveUI.canceled -= instance.OnMoveUI;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -434,7 +405,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnAButton(InputAction.CallbackContext context);
-        void OnBButton(InputAction.CallbackContext context);
-        void OnXButton(InputAction.CallbackContext context);
+        void OnMoveUI(InputAction.CallbackContext context);
     }
 }

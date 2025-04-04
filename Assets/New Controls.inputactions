@@ -51,22 +51,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BButton",
-                    "type": "Button",
-                    "id": "d16d3554-3fd8-44d3-b65a-15bc39b45f96",
-                    "expectedControlType": "",
+                    "name": "MoveUI",
+                    "type": "Value",
+                    "id": "6fd53884-8beb-4ec6-9535-8204387cbf74",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "XButton",
-                    "type": "Button",
-                    "id": "7f0a9d05-87c9-48d5-8fb0-440a40da617b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -215,23 +206,12 @@
                 },
                 {
                     "name": "",
-                    "id": "17f078d6-e9d1-4abf-8bfb-b82d1cdf9f10",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "99a6f0c6-a8f1-48cb-ac15-ef39a284b299",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad",
-                    "action": "BButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ce6802cb-477b-46ba-8de3-08739696d378",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad",
-                    "action": "XButton",
+                    "groups": "",
+                    "action": "MoveUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
