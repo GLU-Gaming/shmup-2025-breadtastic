@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public float bulletSpeed = 5.0f; // De snelheid van de kogel
     public float minFireRate = 1.0f; // De minimale tijd tussen het afvuren van kogels
     public float maxFireRate = 3.0f; // De maximale tijd tussen het afvuren van kogels
-    public int scoreValue = 10; // De scorewaarde van de vijand
+    public int scoreValue = 25; // De scorewaarde van de vijand
 
     public float currentHealth;
     public float nextFireTime = 0f;
