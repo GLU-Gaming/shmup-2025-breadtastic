@@ -92,10 +92,7 @@ public class Helt : MonoBehaviour
             broken.transform.position -= new Vector3(End, 0);
         }
         
-        if (CurentHP < 5)
-        {
             Animator anim = lowHealthFlash.GetComponent<Animator>();
             anim.Play("Base Layer.Blink", 0);
-        }
     }
 }
