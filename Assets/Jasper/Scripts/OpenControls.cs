@@ -14,8 +14,6 @@ public enum OnButton
 
 public class OpenControls : MonoBehaviour
 {
-    public bool ControlUIShow = false;
-
     public Vector2 move;
 
     public List<GameObject> ButtonList;
@@ -49,12 +47,14 @@ public class OpenControls : MonoBehaviour
     public void ControlsActive ()
     {
         ControlsImage.SetActive(true);
+        ImageArrow.SetActive(false);
         active = true;
     }
     
     public void ControlsUnActive ()
     {
         ControlsImage.SetActive(false);
+        ImageArrow.SetActive(true);
         active = false;
     }
 
