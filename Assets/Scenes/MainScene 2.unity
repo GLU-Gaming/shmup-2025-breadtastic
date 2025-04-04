@@ -803,6 +803,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -944628639613478452, guid: 1f200c50a6f0f2848937da0fbc1b7500, type: 3}
     - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
+      propertyPath: broken
+      value: 
+      objectReference: {fileID: 1080621614}
+    - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
       propertyPath: 'HPUIList.Array.data[0]'
       value: 
       objectReference: {fileID: 453735137}

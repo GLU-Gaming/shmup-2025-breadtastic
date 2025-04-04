@@ -13,6 +13,7 @@ public class Helt : MonoBehaviour
     public int CurentUI;
     [SerializeField] GameObject broken;
     [SerializeField] private float End = 27.5f;
+    [SerializeField] GameObject lowHealthFlash;
 
     private Rumble rumble;
 
@@ -21,7 +22,6 @@ public class Helt : MonoBehaviour
         CurentUI = 1+(MaxHP - 1)/2;
 
         rumble = FindFirstObjectByType<Rumble>();
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -90,6 +90,12 @@ public class Helt : MonoBehaviour
             }
 
             broken.transform.position -= new Vector3(End, 0);
+        }
+        
+        if (CurentHP < 5)
+        {
+            Animator anim = lowHealthFlash.GetComponent<Animator>();
+            anim.Play("Base Layer.Blink", 0);
         }
     }
 }
