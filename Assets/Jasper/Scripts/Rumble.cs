@@ -19,23 +19,27 @@ public class Rumble : MonoBehaviour
 
     private void Update()
     {
-        ThisDurationTimer += Time.deltaTime;
-        if (ThisDuration <= ThisDurationTimer)
+        pad = Gamepad.current;
+        if (pad != null)
         {
-            pad.SetMotorSpeeds(0f, 0f);
-            CurentPriority = 0;
-            CurentLow = 0;
-            CurentHigh = 0; 
-        }
+            ThisDurationTimer += Time.deltaTime;
+            if (ThisDuration <= ThisDurationTimer)
+            {
+                pad.SetMotorSpeeds(0f, 0f);
+                CurentPriority = 0;
+                CurentLow = 0;
+                CurentHigh = 0;
+            }
 
-        if (PauseMenu.GameIsPaused)
-        {
-            pad.SetMotorSpeeds(0f, 0f);
-        }
+            if (PauseMenu.GameIsPaused)
+            {
+                pad.SetMotorSpeeds(0f, 0f);
+            }
 
-        else
-        {
-            pad.SetMotorSpeeds(CurentLow, CurentHigh);
+            else
+            {
+                pad.SetMotorSpeeds(CurentLow, CurentHigh);
+            }
         }
     }
 
