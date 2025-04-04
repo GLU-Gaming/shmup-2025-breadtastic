@@ -2787,7 +2787,7 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletPrefab: {fileID: 4223285389275235836, guid: 6a6388546a09f2d4f9c5f7453ebe92fe, type: 3}
   bulletSpawnpoint: {fileID: 1497046581687034599}
-  damage: 120
+  damage: 300
   laserCooldown: 10
   laserDuration: 2
   maxBeamLength: 20
