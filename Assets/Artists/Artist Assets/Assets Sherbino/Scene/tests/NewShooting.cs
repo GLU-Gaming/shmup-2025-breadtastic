@@ -239,6 +239,11 @@ public class NewShooting : MonoBehaviour
 
         beamEndRenderer.SetPosition(0, offsetPosition - (endEffectDirection * BeamEndLength));
         beamEndRenderer.SetPosition(1, offsetPosition + (endEffectDirection * BeamEndLength));
+
+        if (rumble)
+        {
+            rumble.StartRumble(0.3f, 0.5f, 0.2f, 1);
+        }
     }
 
     public void SwitchModel()

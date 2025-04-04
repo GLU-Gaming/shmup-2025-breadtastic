@@ -1,11 +1,48 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public enum OnButton
+{
+    On1Button,
+    On2Button,
+    On3Button
+}
 
 public class OpenControls : MonoBehaviour
 {
-    [SerializeField] private GameObject ControlsImage;
+    public Vector2 move;
 
-    private bool active = false;
+    public List<GameObject> ButtonList;
+
+    [SerializeField] private GameObject ControlsImage;
+    public GameObject ImageArrow;
+
+    public OnButton state;
+
+    public bool active = false;
+
+    public Vector2 offset;
+
+    public bool Button = false;
+
+    private void Start()
+    {
+        state = OnButton.On1Button;
+    }
+
+    public void retry()
+    {
+        SceneManager.LoadScene("MainScene 2");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
 
     public void ControlsActive ()
     {
@@ -19,15 +56,13 @@ public class OpenControls : MonoBehaviour
         active = false;
     }
 
-    public void OnXButton()
+    public void OnAButton(InputValue Value)
     {
-        if (active)
-        {
-            ControlsUnActive();
-        }
-        else
-        {
-            ControlsActive();
-        }
+        Button = true;
+    }
+
+    public void OnMoveUI(InputValue Value)
+    {
+        move = Value.Get<Vector2>();
     }
 }
