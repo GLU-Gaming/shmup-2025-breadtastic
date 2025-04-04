@@ -36,7 +36,7 @@ public class ChargingEnemy : Enemy
         }
     }
 
-    private void SetCurrentHealth(int health)
+    private void SetCurrentHealth(float health)
     {
         currentHealth = health;
     }

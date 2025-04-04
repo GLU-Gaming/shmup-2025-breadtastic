@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     public float speed = 1.0f; // De snelheid van de vijand
     public float verticalSpeed = 1.0f; // De verticale snelheid van de vijand
     public float verticalAmplitude = 1.0f; // De amplitude van de verticale beweging
-    public int maxHealth = 50; // De maximale gezondheid van de vijand
+    public float maxHealth = 50f; // De maximale gezondheid van de vijand
     public GameObject bulletPrefab; // De prefab van de kogel
     public Transform EnemyBulletSpawnpoint; // Het punt waar de kogel wordt gespawned
     public float bulletSpeed = 5.0f; // De snelheid van de kogel
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public float maxFireRate = 3.0f; // De maximale tijd tussen het afvuren van kogels
     public int scoreValue = 10; // De scorewaarde van de vijand
 
-    public int currentHealth;
+    public float currentHealth;
     public float nextFireTime = 0f;
     public float initialYPosition;
 
@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Functie om schade toe te brengen aan de vijand
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 

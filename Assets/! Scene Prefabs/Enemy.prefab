@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 976505503176500395}
   - component: {fileID: 7306661811537001948}
   - component: {fileID: 8295988706266597708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_icing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8964974197261120833}
   - component: {fileID: 2167866274676039002}
   - component: {fileID: 4170103362082832335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2557104960512195851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 8918117508843920694}
   - component: {fileID: -4084602015254824854}
   - component: {fileID: -1420678749469538991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -259,11 +259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  verticalSpeed: 1
+  verticalAmplitude: 1
   maxHealth: 50
   bulletPrefab: {fileID: 558319157693925355, guid: 1b47c1f2b9c2e974e99b508cb1993d59, type: 3}
   EnemyBulletSpawnpoint: {fileID: 2235351869626489285}
   bulletSpeed: 10
-  fireRate: 2
+  minFireRate: 1
+  maxFireRate: 3
+  scoreValue: 10
+  currentHealth: 0
+  nextFireTime: 0
+  initialYPosition: 0
 --- !u!114 &8918117508843920694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +343,7 @@ GameObject:
   - component: {fileID: 1391298539180326522}
   - component: {fileID: 5283365959814571577}
   - component: {fileID: 7672149036473123715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3020920659416294904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'donut enemy '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +466,7 @@ GameObject:
   - component: {fileID: 6160906571070538439}
   - component: {fileID: 2887824233515530240}
   - component: {fileID: 1783689203149831156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +552,7 @@ GameObject:
   - component: {fileID: 4208271914738743151}
   - component: {fileID: 7130695079667234422}
   - component: {fileID: 4666457949365113383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6902985433830633768}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBulletSpawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +669,7 @@ GameObject:
   - component: {fileID: 3653365645973268912}
   - component: {fileID: 3991202456907765254}
   - component: {fileID: 4407684564628432298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_donut.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +755,7 @@ GameObject:
   - component: {fileID: 5489122082446554964}
   - component: {fileID: 881017781487166365}
   - component: {fileID: 5385991802268026917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +841,7 @@ GameObject:
   - component: {fileID: 5611116087162821527}
   - component: {fileID: 7291823196191037426}
   - component: {fileID: 1725437750420908017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +927,7 @@ GameObject:
   - component: {fileID: 4679254283020772433}
   - component: {fileID: 2947180988462861419}
   - component: {fileID: 2542978106341964495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,6 +1070,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6317163f64cc6ab4aa825ccb9e376eff, type: 2}
+    - target: {fileID: -7416892769697876995, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -5285499962029164057, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1071,14 +1082,34 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3a3047ca41fcbc043ab1d6b3fed03ecc, type: 2}
+    - target: {fileID: -2489834606327730787, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: m_Name
       value: ballons
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 931415867266347279, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317091920661307164, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4908427502282523024, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 57c402358d4a4c24899a8521bfedc486, type: 2}
+    - target: {fileID: 5584920616921595675, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7266607661347686966, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1107,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4346371230545651228, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6816812999628855063, guid: 6f84dd159b09b734689d0c6742092b8f, type: 3}
       propertyPath: m_LocalPosition.x

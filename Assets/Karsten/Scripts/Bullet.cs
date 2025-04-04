@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 10; // De schade die de kogel toebrengt
+    public float damage = 10f; // De schade die de kogel toebrengt
 
     void OnCollisionEnter(Collision collision)
     {
