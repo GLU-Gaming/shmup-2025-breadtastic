@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BossProjectile : MonoBehaviour
 {
-    public float freezeDuration;
+    public float damage = 2f; // Damage dealt by the projectile
+    public float freezeDuration; // Duration to freeze the player
 
     void OnCollisionEnter(Collision collision)
     {
@@ -13,11 +14,12 @@ public class BossProjectile : MonoBehaviour
         {
             Debug.Log("BossProjectile hit the Player");
 
-            // Freeze the player
+            // Damage and freeze the player
             Player player = collision.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                player.Freeze(freezeDuration);
+                player.TakeDamage((int)damage); // Apply damage to the player
+                player.Freeze(freezeDuration); // Freeze the player
             }
 
             // Destroy the projectile
