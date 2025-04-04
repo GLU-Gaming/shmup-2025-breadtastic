@@ -77,10 +77,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1864249778447796841}
+  background: {fileID: 0}
+  toonbank: {fileID: 2705626434875717797}
   numberOfPrefabs: 4
   prefabWidth: 7
-  moveSpeed: 2
-  yOffset: -5
+  moveSpeed: 20
+  yOffset: -40
+  zOffset: -25
+  spacing: 47
 --- !u!1001 &3477086590511723206
 PrefabInstance:
   m_ObjectHideFlags: 0

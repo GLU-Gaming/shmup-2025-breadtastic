@@ -5,10 +5,13 @@ public class PrefabManager : MonoBehaviour
 {
     public GameObject prefab; // The prefab to instantiate
     public GameObject background; // Reference to the background GameObject
+    public GameObject toonbank; // Reference to the toonbank prefab
     public int numberOfPrefabs = 3; // Number of prefabs to manage
     public float prefabWidth = 5f; // Width of each prefab
     public float moveSpeed = 2f; // Speed at which the prefabs move
     public float yOffset = -2f; // Offset to move prefabs further down
+    public float zOffset = 1f; // Offset to move prefabs in front of the background
+    public float spacing = 2f; // Additional spacing between prefabs
 
     private List<GameObject> prefabs = new List<GameObject>();
 
@@ -17,11 +20,12 @@ public class PrefabManager : MonoBehaviour
         // Initialize the prefabs
         for (int i = 0; i < numberOfPrefabs; i++)
         {
-            Vector3 position = new Vector3(background.transform.position.x + i * prefabWidth, background.transform.position.y + yOffset, background.transform.position.z);
+            Vector3 position = new Vector3(background.transform.position.x + i * (prefabWidth + spacing), background.transform.position.y + yOffset, background.transform.position.z + zOffset);
             Quaternion rotation = Quaternion.Euler(0, -90, 0); // Rotate 90 degrees around the Y-axis
             GameObject newPrefab = Instantiate(prefab, position, rotation);
+            newPrefab.transform.localScale = toonbank.transform.localScale; // Set the scale to match the toonbank prefab
             prefabs.Add(newPrefab);
-            Debug.Log($"Initialized prefab at position: {position} with rotation: {rotation.eulerAngles}");
+            Debug.Log($"Initialized prefab at position: {position} with rotation: {rotation.eulerAngles} and scale: {newPrefab.transform.localScale}");
         }
     }
 
@@ -34,20 +38,15 @@ public class PrefabManager : MonoBehaviour
         }
 
         // Check if the leftmost prefab is out of view
-        if (prefabs[0].transform.position.x < -prefabWidth * numberOfPrefabs / 2)
+        if (prefabs[0].transform.position.x < -prefabWidth * numberOfPrefabs)
         {
-            // Remove the leftmost prefab
+            // Reposition the leftmost prefab to the right
             GameObject leftmostPrefab = prefabs[0];
             prefabs.RemoveAt(0);
-            Destroy(leftmostPrefab);
-            Debug.Log("Removed leftmost prefab");
-
-            // Instantiate a new prefab on the right
-            Vector3 newPosition = new Vector3(prefabs[prefabs.Count - 1].transform.position.x + prefabWidth, background.transform.position.y + yOffset, background.transform.position.z);
-            Quaternion rotation = Quaternion.Euler(0, -90, 0); // Rotate 90 degrees around the Y-axis
-            GameObject newPrefab = Instantiate(prefab, newPosition, rotation);
-            prefabs.Add(newPrefab);
-            Debug.Log($"Instantiated new prefab at position: {newPosition} with rotation: {rotation.eulerAngles}");
+            float newXPosition = prefabs[prefabs.Count - 1].transform.position.x + prefabWidth + spacing;
+            leftmostPrefab.transform.position = new Vector3(newXPosition, background.transform.position.y + yOffset, background.transform.position.z + zOffset);
+            prefabs.Add(leftmostPrefab);
+            Debug.Log($"Repositioned prefab to position: {leftmostPrefab.transform.position}");
         }
     }
 }
