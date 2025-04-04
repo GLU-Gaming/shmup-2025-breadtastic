@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int health = 100; // Aantal levens van de boss
+    public float health = 100; // Aantal levens van de boss
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage; // Verminder het aantal levens met de hoeveelheid schade
         if (health <= 0)

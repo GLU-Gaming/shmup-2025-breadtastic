@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791472076072914113}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 9009988367275910800}
   - component: {fileID: 2266958516276563595}
   - component: {fileID: 4089051649693232158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: -6763169352817932876}
   - component: {fileID: -8217051813623420145}
   - component: {fileID: -1145492183632235978}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'cinnenim '
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -227,6 +227,7 @@ MonoBehaviour:
   bulletSpeed: 5
   minFireRate: 1
   maxFireRate: 3
+  scoreValue: 10
   currentHealth: 0
   nextFireTime: 0
   initialYPosition: 0
@@ -240,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2921819607630018089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'cinnenim '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 1310255571394866603}
   - component: {fileID: 5202323321630766568}
   - component: {fileID: 7717171674671304786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +365,7 @@ GameObject:
   - component: {fileID: 2089043376311889228}
   - component: {fileID: 7277980212362386386}
   - component: {fileID: 1154779243913332493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +451,7 @@ GameObject:
   - component: {fileID: 6061840442741018902}
   - component: {fileID: 2986881548187233233}
   - component: {fileID: 1846752680729028645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +537,7 @@ GameObject:
   - component: {fileID: 7432190835824593799}
   - component: {fileID: 1197921998798953022}
   - component: {fileID: 5429215610755852043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +623,7 @@ GameObject:
   - component: {fileID: 1706117312130304111}
   - component: {fileID: 164050901379459650}
   - component: {fileID: 4953604272198366163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 7049145811106107899}
   - component: {fileID: 486549523537329682}
   - component: {fileID: 6454768033518941711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +795,7 @@ GameObject:
   - component: {fileID: 5570199942444737669}
   - component: {fileID: 962104728986267724}
   - component: {fileID: 5467078733358783476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +881,7 @@ GameObject:
   - component: {fileID: 5530038246508759110}
   - component: {fileID: 7228794955156735011}
   - component: {fileID: 1626336406962467872}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Retopo_Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,6 +1024,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6317163f64cc6ab4aa825ccb9e376eff, type: 2}
+    - target: {fileID: -7416892769697876995, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -5285499962029164057, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1031,14 +1036,34 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7d798a547b379fd408c5c577d33cf53a, type: 2}
+    - target: {fileID: -2489834606327730787, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: m_Name
       value: ballons
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 931415867266347279, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317091920661307164, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4908427502282523024, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3a3047ca41fcbc043ab1d6b3fed03ecc, type: 2}
+    - target: {fileID: 5584920616921595675, guid: b3534325578012e49bac8480ec678396, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7266607661347686966, guid: b3534325578012e49bac8480ec678396, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
