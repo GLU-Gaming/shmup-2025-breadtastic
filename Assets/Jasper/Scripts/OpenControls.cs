@@ -14,6 +14,8 @@ public enum OnButton
 
 public class OpenControls : MonoBehaviour
 {
+    public bool ControlUIShow = false;
+
     public Vector2 move;
 
     public List<GameObject> ButtonList;

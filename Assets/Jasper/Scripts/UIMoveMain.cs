@@ -17,7 +17,16 @@ public class UIMove : OpenControls
 
     private void Update()
     {
-        if(CurentMove.y == 3)
+        if (ControlUIShow)
+        {
+            ImageArrow.SetActive(false);
+        }
+        else
+        {
+            ImageArrow.SetActive(true);
+        }
+
+        if (CurentMove.y == 3)
         {
             state = OnButton.On1Button;
             CurentMove.y = 0;
@@ -62,14 +71,7 @@ public class UIMove : OpenControls
 
             if (Button)
             {
-                if (active)
-                {
-                    ControlsUnActive();
-                }
-                else
-                {
-                    ControlsActive();
-                }
+                Control();
             }
         }
 
@@ -87,18 +89,33 @@ public class UIMove : OpenControls
         Button = false;
     }
 
+    public void Control()
+    {
+        if (active)
+        {
+            ControlsUnActive();
+        }
+        else
+        {
+            ControlsActive();
+        }
+    }
+
     private void Move()
     {
-        if (move.y >= 0.1 && TimerMove >= TimeMove)
+        if (ControlUIShow!)
         {
-            CurentMove.y -= 1;
-            TimerMove = 0;
-        }
+            if (move.y >= 0.1 && TimerMove >= TimeMove)
+            {
+                CurentMove.y -= 1;
+                TimerMove = 0;
+            }
 
-        if (move.y <= -0.1 && TimerMove >= TimeMove)
-        {
-            CurentMove.y += 1;
-            TimerMove = 0;
+            if (move.y <= -0.1 && TimerMove >= TimeMove)
+            {
+                CurentMove.y += 1;
+                TimerMove = 0;
+            }
         }
     }
 }
