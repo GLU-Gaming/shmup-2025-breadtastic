@@ -1222,9 +1222,9 @@ MonoBehaviour:
   ImageArrow: {fileID: 671901946}
   state: 0
   active: 0
-  offset: {x: 50, y: 0}
+  offset: {x: -100, y: 0}
   Button: 0
-  TimeMove: 2
+  TimeMove: 0.3
 --- !u!1 &1158871571
 GameObject:
   m_ObjectHideFlags: 0

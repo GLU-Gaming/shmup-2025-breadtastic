@@ -17,7 +17,7 @@ public class UIMove : OpenControls
 
     private void Update()
     {
-        if(CurentMove.y == 4)
+        if(CurentMove.y == 3)
         {
             state = OnButton.On1Button;
             CurentMove.y = 0;
