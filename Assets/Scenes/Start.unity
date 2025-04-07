@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd12b0e0b5dbb7847971a9f404a90a3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1000,7 +1000,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -500, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 112.4, y: 107.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1008808155
 GameObject:
@@ -1222,7 +1222,7 @@ MonoBehaviour:
   ImageArrow: {fileID: 671901946}
   state: 0
   active: 0
-  offset: {x: -270, y: 0}
+  offset: {x: -270, y: -55}
   Button: 0
   TimeMove: 0.3
 --- !u!1 &1158871571

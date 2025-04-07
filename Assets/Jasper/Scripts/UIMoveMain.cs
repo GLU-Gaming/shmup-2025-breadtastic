@@ -13,6 +13,7 @@ public class UIMove : OpenControls
     private void Start()
     {
         TimerMove = TimeMove;
+        GameIsPaused = true;
     }
 
     private void Update()
@@ -54,6 +55,7 @@ public class UIMove : OpenControls
             if (Button)
             {
                 retry();
+                GameIsPaused = false;
             }
         }
 
@@ -86,18 +88,6 @@ public class UIMove : OpenControls
         }
 
         Button = false;
-    }
-
-    public void Control()
-    {
-        if (active)
-        {
-            ControlsUnActive();
-        }
-        else
-        {
-            ControlsActive();
-        }
     }
 
     private void Move()
