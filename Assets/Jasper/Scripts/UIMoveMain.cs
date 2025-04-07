@@ -55,7 +55,6 @@ public class UIMove : OpenControls
             if (Button)
             {
                 retry();
-                GameIsPaused = false;
             }
         }
 
