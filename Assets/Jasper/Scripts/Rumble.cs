@@ -35,7 +35,6 @@ public class Rumble : MonoBehaviour
             {
                 pad.SetMotorSpeeds(0f, 0f);
             }
-
             else
             {
                 pad.SetMotorSpeeds(CurentLow, CurentHigh);

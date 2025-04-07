@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMovePause : OpenControls
 {
@@ -11,14 +13,28 @@ public class UIMovePause : OpenControls
     [SerializeField] private float TimeMoveUpAndDown;
     private float TimerMoveUpAndDown;
 
+    [SerializeField] private TextMeshProUGUI ScoreText;
+    private float ScoreNum = 0;
+    private ScoreManager scoreManager;
+
     private void Start()
     {
         TimerMove = TimeMove;
         TimerMoveUpAndDown = TimeMoveUpAndDown;
+        Resume();
+
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     private void Update()
     {
+        if (scoreManager)
+        {
+            ScoreNum = scoreManager.score;
+        }
+
+        ScoreText.text = "" + ScoreNum;
+
         TimerMove += Time.unscaledDeltaTime;
 
         if (CurentMove.x <= -1 && CurentMove.y == 0)
@@ -79,6 +95,7 @@ public class UIMovePause : OpenControls
             if (Button)
             {
                 Resume();
+                Button = false;
             }
         }
 
@@ -88,6 +105,7 @@ public class UIMovePause : OpenControls
 
             if (Button)
             {
+                Time.timeScale = 1f;
                 OnLoadStart();
             }
         }
@@ -105,10 +123,6 @@ public class UIMovePause : OpenControls
         if (GameIsPaused)
         {
             Move();
-        }
-        else
-        {
-            
         }
     }
 
