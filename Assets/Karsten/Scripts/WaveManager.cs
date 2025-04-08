@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
     public static WaveManager instance;
-    public Text waveText;
+    public TextMeshProUGUI waveText;
     public  int waveCounter = 0;
 
     void Awake()
