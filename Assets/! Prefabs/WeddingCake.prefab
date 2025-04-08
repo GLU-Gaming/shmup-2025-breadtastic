@@ -426,6 +426,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   damage: 1
+  chargingEnemyPrefab: {fileID: 2456762206953608762, guid: 0824b5da27a863e49b931c2d8d51531f, type: 3}
+  normalEnemyPrefab: {fileID: 2118833177575204320, guid: 4f159d31ad68f794fab22096d0b80d1b, type: 3}
+  spawnPoint: {fileID: 0}
 --- !u!1 &3933200247502671597
 GameObject:
   m_ObjectHideFlags: 0

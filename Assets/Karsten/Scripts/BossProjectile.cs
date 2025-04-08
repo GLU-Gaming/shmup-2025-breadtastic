@@ -24,7 +24,7 @@ public class BossProjectile : MonoBehaviour
         if (player != null)
         {
             Debug.Log("BossProjectile hit the player"); // Log the collision
-            player.TakeDamage(2); // Apply damage to the player
+            player.TakeDamage(1); // Apply damage to the player
             Destroy(gameObject); // Destroy the projectile
         }
     }

@@ -50,7 +50,7 @@ public class ChargingEnemy : Enemy
             Player player = collision.GetComponent<Player>();
             if (player != null)
             {
-                player.TakeDamage(1); // Verminder het aantal levens van de speler met 1
+                player.TakeDamage(10000); // Verminder het aantal levens van de speler met 1
             }
 
             // Activeer de sterfgebeurtenis
