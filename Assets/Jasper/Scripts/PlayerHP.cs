@@ -31,6 +31,15 @@ public class Helt : MonoBehaviour
         CurentUI = 1+(MaxHP - 1)/2;
 
         rumble = FindFirstObjectByType<Rumble>();
+
+        // Spelers kleuren zetten naar default kleur
+        playerMat1.SetColor("_BaseColor", originalColor1);
+        playerMat2.SetColor("_BaseColor", originalColor1);
+        playerMat3.SetColor("_BaseColor", originalColor2);
+
+        playerMat1.SetColor("_1st_ShadeColor", secondColor1);
+        playerMat2.SetColor("_1st_ShadeColor", secondColor1);
+        playerMat3.SetColor("_1st_ShadeColor", secondColor2);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -62,6 +71,7 @@ public class Helt : MonoBehaviour
             }
             CurentHP = 1;
             HPBar();
+
             Destroy(collision.gameObject); // Vernietig de vijand
         }
     }
@@ -101,7 +111,7 @@ public class Helt : MonoBehaviour
             broken.transform.position -= new Vector3(End, 0);
         }
 
-        StartCoroutine(playerFlash());
+            StartCoroutine(playerFlash());
 
     }
 

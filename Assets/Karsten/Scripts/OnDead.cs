@@ -16,7 +16,7 @@ public class OnDead : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("OnDead Update method is being called."); // Log that the Update method is being called
+        //Debug.Log("OnDead Update method is being called."); // Log that the Update method is being called
 
         if (dead)
         {
