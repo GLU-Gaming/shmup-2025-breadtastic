@@ -44,7 +44,7 @@ public class Helt : MonoBehaviour
             Debug.Log("Player hit by Enemy");
             if (rumble)
             {
-                rumble.StartRumble(0.25f, 1f, 0.5f, 2);
+                rumble.StartRumble(0.75f, 1f, 0.5f, 2);
             }
             CurentHP = enemyBullet.damage;
             HPBar();
