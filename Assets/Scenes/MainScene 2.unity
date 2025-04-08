@@ -1094,11 +1094,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1181020131}
+  m_Father: {fileID: 2076683781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34.8728, y: 149.0022}
+  m_AnchoredPosition: {x: 34.872864, y: 149.00226}
   m_SizeDelta: {x: 65.4432, y: 289.3994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685434700
@@ -1686,11 +1686,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1181020131}
+  m_Father: {fileID: 2076683781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34.8728, y: 149.0022}
+  m_AnchoredPosition: {x: 34.872864, y: 149.00226}
   m_SizeDelta: {x: 53.8944, y: 272.6424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1080621614
@@ -1798,11 +1798,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1181020131}
+  m_Father: {fileID: 2076683781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34.8728, y: 149.0022}
+  m_AnchoredPosition: {x: 34.872864, y: 149.00226}
   m_SizeDelta: {x: 69.7457, y: 298.0045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105220298
@@ -2093,9 +2093,7 @@ RectTransform:
   - {fileID: 1080621615}
   - {fileID: 1816306004}
   - {fileID: 624354422}
-  - {fileID: 1105220297}
-  - {fileID: 1060902247}
-  - {fileID: 685434699}
+  - {fileID: 2076683781}
   - {fileID: 2120170760}
   - {fileID: 1765622890}
   m_Father: {fileID: 1882394029}
@@ -2930,6 +2928,44 @@ Transform:
   - {fileID: 1181020131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2076683780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076683781}
+  m_Layer: 5
+  m_Name: CooldownBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2076683781
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076683780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1105220297}
+  - {fileID: 1060902247}
+  - {fileID: 685434699}
+  m_Father: {fileID: 1181020131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -894, y: -361.2}
+  m_SizeDelta: {x: 69.74573, y: 298.00452}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2120170759
 GameObject:
   m_ObjectHideFlags: 0
