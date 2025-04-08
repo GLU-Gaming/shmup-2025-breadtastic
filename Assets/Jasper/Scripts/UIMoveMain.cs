@@ -13,18 +13,11 @@ public class UIMove : OpenControls
     private void Start()
     {
         TimerMove = TimeMove;
+        PauseTrue.GameIsPaused = true;
     }
 
     private void Update()
     {
-        if (ControlUIShow)
-        {
-            ImageArrow.SetActive(false);
-        }
-        else
-        {
-            ImageArrow.SetActive(true);
-        }
 
         if (CurentMove.y == 3)
         {
@@ -85,37 +78,29 @@ public class UIMove : OpenControls
             }
         }
 
-        Move();
-        Button = false;
-    }
-
-    public void Control()
-    {
         if (active)
-        {
-            ControlsUnActive();
+        {            
         }
         else
         {
-            ControlsActive();
+            Move();
         }
+
+        Button = false;
     }
 
     private void Move()
     {
-        if (ControlUIShow!)
+        if (move.y >= 0.1 && TimerMove >= TimeMove)
         {
-            if (move.y >= 0.1 && TimerMove >= TimeMove)
-            {
-                CurentMove.y -= 1;
-                TimerMove = 0;
-            }
-
-            if (move.y <= -0.1 && TimerMove >= TimeMove)
-            {
-                CurentMove.y += 1;
-                TimerMove = 0;
-            }
+            CurentMove.y -= 1;
+            TimerMove = 0;
+        }
+        
+        if (move.y <= -0.1 && TimerMove >= TimeMove)
+        {
+            CurentMove.y += 1;
+            TimerMove = 0;
         }
     }
 }

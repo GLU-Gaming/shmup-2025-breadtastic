@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    
 
     [SerializeField] GameObject pauseMenuUI;
 
@@ -12,19 +12,19 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        PauseTrue.GameIsPaused = false;
     }
 
     private void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        PauseTrue.GameIsPaused = true;
     }
 
     public void OnPause(InputValue value)
     {
-        if (GameIsPaused)
+        if (PauseTrue.GameIsPaused)
         {
             Resume();
         }
