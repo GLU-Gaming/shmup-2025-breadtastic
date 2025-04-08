@@ -9,7 +9,7 @@ public class Helt : MonoBehaviour
 {
     [SerializeField] private int MaxHP = 15;
     private bool half = false;
-    private int CurentHP;
+    public int CurentHP;
     [SerializeField] private List<GameObject> HPUIList = new List<GameObject>();
     public int CurentUI;
     [SerializeField] GameObject broken;
