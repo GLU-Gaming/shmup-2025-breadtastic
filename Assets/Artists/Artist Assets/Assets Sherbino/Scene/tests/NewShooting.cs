@@ -81,7 +81,6 @@ public class NewShooting : MonoBehaviour
 
             // Controleer of de rechtermuisknop is ingedrukt
             if (buttonSecondary != 0)
-
             {
                 if (!isFiring)
                 {
@@ -99,6 +98,8 @@ public class NewShooting : MonoBehaviour
     {
         isFiring = true;
         nextLaserTime = Time.time + laserCooldown;
+        CoolDown coolDown = FindFirstObjectByType<CoolDown>();
+        coolDown.LaserCooldown = 0;
         SwitchModel();
         SetBeamActive(true);
 
