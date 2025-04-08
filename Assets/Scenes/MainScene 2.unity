@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1816306002}
+  score: 0
 --- !u!4 &311192055
 Transform:
   m_ObjectHideFlags: 0
@@ -920,6 +921,10 @@ PrefabInstance:
       propertyPath: broken
       value: 
       objectReference: {fileID: 1080621614}
+    - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
+      propertyPath: playerMat3
+      value: 
+      objectReference: {fileID: 2100000, guid: 5185df977d9b1904d90931d62c3810ff, type: 2}
     - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
       propertyPath: lowHealthFlash
       value: 
