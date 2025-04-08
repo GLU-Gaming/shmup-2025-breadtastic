@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 4326295077954005854}
   - component: {fileID: 2833914445831232647}
   - component: {fileID: 6800599501988985632}
+  - component: {fileID: 8735993160042612306}
   m_Layer: 0
   m_Name: WeddingCake
   m_TagString: Enemy
@@ -356,7 +357,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &4326295077954005854
 BoxCollider:
@@ -373,7 +374,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -409,7 +410,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee276712c9452c243883f85820e3f386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 2
   freezeDuration: 2
+--- !u!114 &8735993160042612306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060041836746823708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10ea50b18d757947ae6787c0eae35b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  damage: 10
 --- !u!1 &3933200247502671597
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -970301710169589869}
   - component: {fileID: 5195643173026415513}
   m_Layer: 0
-  m_Name: smallCandle
+  m_Name: BossProjectile
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

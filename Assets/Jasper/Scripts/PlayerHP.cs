@@ -8,7 +8,7 @@ public class Helt : MonoBehaviour
 {
     [SerializeField] private int MaxHP = 15;
     private bool half = false;
-    private int CurentHP;
+    public int CurentHP;
     [SerializeField] private List<GameObject> HPUIList = new List<GameObject>();
     public int CurentUI;
     [SerializeField] GameObject broken;
@@ -19,7 +19,7 @@ public class Helt : MonoBehaviour
 
     void Start()
     {
-        CurentUI = 1+(MaxHP - 1)/2;
+        CurentUI = 1 + (MaxHP ) / 2;
 
         rumble = FindFirstObjectByType<Rumble>();
     }
@@ -59,11 +59,11 @@ public class Helt : MonoBehaviour
 
     private void HPBar()
     {
-        for(int i = 0; i < CurentHP; i++)
+        for (int i = 0; i < CurentHP; i++)
         {
             if (half)
             {
-                Image UI = HPUIList[CurentUI - 1].GetComponent<Image>();
+                Image UI = HPUIList[CurentUI].GetComponent<Image>();
                 UI.fillAmount = 0.5f;
                 half = false;
             }
@@ -91,8 +91,8 @@ public class Helt : MonoBehaviour
 
             broken.transform.position -= new Vector3(End, 0);
         }
-        
-            Animator anim = lowHealthFlash.GetComponent<Animator>();
-            anim.Play("Base Layer.Blink", 0);
+
+        Animator anim = lowHealthFlash.GetComponent<Animator>();
+        anim.Play("Base Layer.Blink", 0);
     }
 }

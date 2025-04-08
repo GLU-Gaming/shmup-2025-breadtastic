@@ -3176,6 +3176,8 @@ GameObject:
   - component: {fileID: 3031683579238038253}
   - component: {fileID: 4539140488020962772}
   - component: {fileID: 5267272837864513057}
+  - component: {fileID: 9026206572188637425}
+  - component: {fileID: 7630585290225430900}
   m_Layer: 0
   m_Name: PlayerNew
   m_TagString: Player
@@ -3225,7 +3227,7 @@ MonoBehaviour:
   laserCooldown: 10
   laserDuration: 2
   maxBeamLength: 20
-  beamGrowthSpeed: 40
+  beamGrowthSpeed: 100
   hitLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -3281,7 +3283,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 15
+  onDead: {fileID: 0}
+  playerHP: {fileID: 5267272837864513057}
   Isdead: 1
+  speed: 5
+  hitOverlay: {fileID: 0}
+  overlayDuration: 0.5
 --- !u!114 &4252454503507047935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3357,6 +3364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 15
+  CurentHP: 0
   HPUIList:
   - {fileID: 0}
   - {fileID: 0}
@@ -3370,6 +3378,33 @@ MonoBehaviour:
   broken: {fileID: 0}
   End: 27.5
   lowHealthFlash: {fileID: 0}
+--- !u!114 &9026206572188637425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344148957730918490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4553214b5c38383498da143f354ac772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+--- !u!114 &7630585290225430900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344148957730918490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7a3ae7ba1069346acdcda94ad4beb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerDeadEnd: 3
+  retrySceneIndex: 1
 --- !u!1 &7422894494688946108
 GameObject:
   m_ObjectHideFlags: 0
