@@ -29,8 +29,6 @@ public class OpenControls : MonoBehaviour
 
     public bool Button = false;
 
-    public static bool GameIsPaused = false;
-
     [SerializeField] GameObject pauseMenuUI;
 
     private void Start()
@@ -76,7 +74,7 @@ public class OpenControls : MonoBehaviour
 
     public void OnAButton(InputValue Value)
     {
-        if (GameIsPaused)
+        if (PauseTrue.GameIsPaused)
         {
             Button = true;
         }
@@ -91,19 +89,19 @@ public class OpenControls : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        PauseTrue.GameIsPaused = false;
     }
 
     private void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        PauseTrue.GameIsPaused = true;
     }
 
     public void OnPause(InputValue value)
     {
-        if (GameIsPaused)
+        if (PauseTrue.GameIsPaused)
         {
             Resume();
         }
