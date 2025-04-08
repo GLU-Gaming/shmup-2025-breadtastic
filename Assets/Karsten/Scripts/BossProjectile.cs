@@ -20,15 +20,12 @@ public class BossProjectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Controleer of de projectile de speler raakt
-        // Controleer of de projectile de speler raakt
         Player player = other.GetComponent<Player>();
         if (player != null)
         {
-            Debug.Log("BossProjectile hit the Player"); // Debug log
-            player.TakeDamage((int)damage); // Breng schade toe aan de speler
-            player.Freeze(freezeDuration); // Bevries de speler
-            Destroy(gameObject); // Vernietig de projectile
+            Debug.Log("BossProjectile hit the player"); // Log the collision
+            player.TakeDamage(2); // Apply damage to the player
+            Destroy(gameObject); // Destroy the projectile
         }
     }
 }

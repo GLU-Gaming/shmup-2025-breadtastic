@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6045198546300000463}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiddleLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5846780323748406633}
   - component: {fileID: 6842935174236446720}
   - component: {fileID: 6301594336348539395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BotToppings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 794444728922803168}
   - component: {fileID: 631779326983180161}
   - component: {fileID: 7025826161811445616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 5846248384192782436}
   - component: {fileID: 65890759972863737}
   - component: {fileID: 5734693838548377663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MidToppings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 2833914445831232647}
   - component: {fileID: 6800599501988985632}
   - component: {fileID: 8735993160042612306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeddingCake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -410,8 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee276712c9452c243883f85820e3f386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  freezeDuration: 2
+  damage: 0
+  freezeDuration: 0
 --- !u!114 &8735993160042612306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  damage: 10
+  damage: 1
 --- !u!1 &3933200247502671597
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 96780165026263768}
   - component: {fileID: 538358719706125059}
   - component: {fileID: 473192971326872568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BotCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387684029773347702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7452081248141411683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BottomLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 7644214429829097501}
   - component: {fileID: 349940409725680725}
   - component: {fileID: 1276431314265668015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MidPearls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 7574710874078947368}
   - component: {fileID: 7251860763191300365}
   - component: {fileID: 3541788851078204117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BotPearls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 4747101816331868648}
   - component: {fileID: 5978235134156428921}
   - component: {fileID: 8804679527488457238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopPearls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 4062516836650712938}
   - component: {fileID: 5201933985382550375}
   - component: {fileID: 3472622393327940200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MidCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 2303864037649914865}
   - component: {fileID: 3182244499810724805}
   - component: {fileID: 9208030529191368417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopToppings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8238565201903095176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

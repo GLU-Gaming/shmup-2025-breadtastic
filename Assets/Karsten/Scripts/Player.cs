@@ -76,12 +76,7 @@ public class Player : MonoBehaviour
             Debug.Log("Player is dead. Calling OnDead.Dead method."); // Log that the player is dead
             if (onDead != null)
             {
-                Debug.Log("Calling OnDead.Dead(true)"); // Log that the Dead method is being called
                 onDead.Dead(true); // Notify the OnDead script that the player is dead
-            }
-            else
-            {
-                Debug.LogError("OnDead reference is null in Player script!"); // Log an error if the OnDead reference is null
             }
             Destroy(gameObject); // Destroy the player object
         }

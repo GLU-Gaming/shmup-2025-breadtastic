@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public float health = 100; // Aantal levens van de boss
-    public float damage = 10f; // Schade die de boss toebrengt aan de speler
+    public float damage = 2f; // Schade die de boss toebrengt aan de speler
 
     void Start()
     {
