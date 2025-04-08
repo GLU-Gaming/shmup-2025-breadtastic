@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ovenMat
+  m_Name: ovenWoutlinesMat
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -40,7 +40,6 @@ Material:
     RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
-  - SRPDEFAULTUNLIT
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -525,7 +524,7 @@ Material:
     - _utsVersionY: 11
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.64705884, g: 0.65882355, b: 0.78039217, a: 1}
+    - _1st_ShadeColor: {r: 0.6470588, g: 0.6588235, b: 0.7803922, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -533,7 +532,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
