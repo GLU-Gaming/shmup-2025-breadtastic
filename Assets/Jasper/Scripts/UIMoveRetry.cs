@@ -1,40 +1,20 @@
 using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIMovePause : OpenControls
+public class UIMoveRetry : OpenControls
 {
     public Vector2 CurentMove;
 
-    [SerializeField] private float TimeMove;
+    [SerializeField] private float TimeMove = 0.3f;
     private float TimerMove;
-    
-    [SerializeField] private float TimeMoveUpAndDown;
-    private float TimerMoveUpAndDown;
 
-    [SerializeField] private TextMeshProUGUI ScoreText;
-    private float ScoreNum = 0;
-    private ScoreManager scoreManager;
-
-    private void Start()
+    void Start()
     {
-        TimerMove = TimeMove;
-        TimerMoveUpAndDown = TimeMoveUpAndDown;
-        Resume();
-
-        scoreManager = FindFirstObjectByType<ScoreManager>();
+        PauseTrue.GameIsPaused = true;
     }
 
-    private void Update()
+    void Update()
     {
-        if (scoreManager)
-        {
-            ScoreNum = scoreManager.score;
-        }
-
-        ScoreText.text = "" + ScoreNum;
-
         TimerMove += Time.unscaledDeltaTime;
 
         if (CurentMove.x <= -1)
@@ -52,7 +32,7 @@ public class UIMovePause : OpenControls
         {
             state = OnButton.On2Button;
         }
-        
+
         if (CurentMove.x >= 2)
         {
             state = OnButton.On1Button;
@@ -65,7 +45,7 @@ public class UIMovePause : OpenControls
 
             if (Button)
             {
-                Resume();
+                retry();
                 Button = false;
             }
         }
@@ -89,13 +69,13 @@ public class UIMovePause : OpenControls
 
     private void Move()
     {
-        if(move.x >= 0.1 && TimerMove >= TimeMove)
+        if (move.x >= 0.1 && TimerMove >= TimeMove)
         {
             CurentMove.x -= 1;
             TimerMove = 0;
         }
-        
-        if(move.x <= -0.1 && TimerMove >= TimeMove)
+
+        if (move.x <= -0.1 && TimerMove >= TimeMove)
         {
             CurentMove.x += 1;
             TimerMove = 0;

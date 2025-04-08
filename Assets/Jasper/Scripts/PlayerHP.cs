@@ -39,7 +39,7 @@ public class Helt : MonoBehaviour
 
         // Controleer of de speler een vijandelijke kogel raakt
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
-        if (enemyBullet)
+        if (enemyBullet)    
         {
             Debug.Log("Player hit by Enemy");
             if (rumble)
