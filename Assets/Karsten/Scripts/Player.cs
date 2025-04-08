@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,26 +10,20 @@ public class Player : MonoBehaviour
     private bool isFrozen = false;
     private float freezeTimer = 0f;
 
+    // Toegevoegd voor hit overlay
+    public Image hitOverlay; // Reference to the UI Image component for the hit overlay
+    public float overlayDuration = 0.5f; // Duration for which the overlay is visible
+    private float overlayTimer;
+
     private void Start()
     {
         onDead = FindFirstObjectByType<OnDead>();
-    }
 
-    public void TakeDamage(int damage)
-    {
-        lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
-        if (lives <= 0 && onDead)
+        // Zorg ervoor dat de overlay aanvankelijk is uitgeschakeld
+        if (hitOverlay != null)
         {
-            Debug.Log("dead");
-            onDead.Dead(Isdead);
-            Destroy(gameObject);
+            hitOverlay.enabled = false;
         }
-    }
-
-    public void Freeze(float duration)
-    {
-        isFrozen = true;
-        freezeTimer = duration;
     }
 
     private void Update()
@@ -41,6 +36,36 @@ public class Player : MonoBehaviour
                 isFrozen = false;
             }
         }
+
+        // Beheer de overlay-timer
+        if (overlayTimer > 0)
+        {
+            overlayTimer -= Time.deltaTime;
+            if (overlayTimer <= 0 && hitOverlay != null)
+            {
+                hitOverlay.enabled = false; // Schakel de overlay uit wanneer de timer verloopt
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        lives -= damage; // Verminder het aantal levens met de hoeveelheid schade
+        if (lives <= 0 && onDead)
+        {
+            Debug.Log("dead");
+            onDead.Dead(Isdead);
+            Destroy(gameObject);
+        }
+
+        // Toon de hit overlay wanneer de speler schade oploopt
+        ShowHitOverlay();
+    }
+
+    public void Freeze(float duration)
+    {
+        isFrozen = true;
+        freezeTimer = duration;
     }
 
     void OnTriggerEnter(Collider collision)
@@ -73,6 +98,16 @@ public class Player : MonoBehaviour
             TakeDamage(2); // Verminder het aantal levens van de speler met 2
             Freeze(bossProjectile.freezeDuration); // Bevries de speler
             Destroy(collision.gameObject); // Vernietig de boss projectile
+        }
+    }
+
+    // Toegevoegd voor hit overlay
+    private void ShowHitOverlay()
+    {
+        if (hitOverlay != null)
+        {
+            hitOverlay.enabled = true; // Schakel de overlay in
+            overlayTimer = overlayDuration; // Reset de timer
         }
     }
 }

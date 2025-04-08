@@ -35,5 +35,14 @@ public class Boss : MonoBehaviour
             TakeDamage(playerBullet.damage); // Verminder het aantal levens van de boss met de schade van de kogel
             Destroy(collision.gameObject); // Vernietig de kogel
         }
+
+        // Controleer of de boss een speler laser raakt
+        Laser playerLaser = collision.GetComponent<Laser>();
+        if (playerLaser)
+        {
+            Debug.Log("Boss hit by PlayerLaser");
+            TakeDamage(playerLaser.damage); // Verminder het aantal levens van de boss met de schade van de laser
+            Destroy(collision.gameObject); // Vernietig de laser
+        }
     }
 }

@@ -6,6 +6,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject prefab; // The prefab to instantiate
     public GameObject background; // Reference to the background GameObject
     public GameObject toonbank; // Reference to the toonbank prefab
+    public List<GameObject> additionalPrefabs; // List of additional prefabs to move with the background
     public int numberOfPrefabs = 3; // Number of prefabs to manage
     public float prefabWidth = 5f; // Width of each prefab
     public float moveSpeed = 2f; // Speed at which the prefabs move
@@ -30,6 +31,17 @@ public class PrefabManager : MonoBehaviour
             newPrefab.transform.localScale = toonbank.transform.localScale; // Set the scale to match the toonbank prefab
             prefabs.Add(newPrefab);
             Debug.Log($"Initialized prefab at position: {position} with rotation: {rotation.eulerAngles} and scale: {newPrefab.transform.localScale}");
+        }
+
+        // Initialize additional prefabs
+        foreach (GameObject additionalPrefab in additionalPrefabs)
+        {
+            Vector3 position = new Vector3(startX, background.transform.position.y + yOffset, background.transform.position.z + zOffset);
+            Quaternion rotation = Quaternion.Euler(0, -90, 0); // Rotate 90 degrees around the Y-axis
+            GameObject newAdditionalPrefab = Instantiate(additionalPrefab, position, rotation);
+            newAdditionalPrefab.transform.localScale = toonbank.transform.localScale; // Set the scale to match the toonbank prefab
+            prefabs.Add(newAdditionalPrefab);
+            Debug.Log($"Initialized additional prefab at position: {position} with rotation: {rotation.eulerAngles} and scale: {newAdditionalPrefab.transform.localScale}");
         }
     }
 

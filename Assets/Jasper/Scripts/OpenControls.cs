@@ -14,8 +14,6 @@ public enum OnButton
 
 public class OpenControls : MonoBehaviour
 {
-    public bool ControlUIShow = false;
-
     public Vector2 move;
 
     public List<GameObject> ButtonList;
@@ -30,6 +28,10 @@ public class OpenControls : MonoBehaviour
     public Vector2 offset;
 
     public bool Button = false;
+
+    public static bool GameIsPaused = false;
+
+    [SerializeField] GameObject pauseMenuUI;
 
     private void Start()
     {
@@ -46,25 +48,73 @@ public class OpenControls : MonoBehaviour
         Application.Quit();
     }
 
+    public void Control()
+    {
+        if (active)
+        {
+            ControlsUnActive();
+        }
+        else
+        {
+            ControlsActive();
+        }
+    }
+
     public void ControlsActive ()
     {
         ControlsImage.SetActive(true);
+        ImageArrow.SetActive(false);
         active = true;
     }
     
     public void ControlsUnActive ()
     {
         ControlsImage.SetActive(false);
+        ImageArrow.SetActive(true);
         active = false;
     }
 
     public void OnAButton(InputValue Value)
     {
-        Button = true;
+        if (GameIsPaused)
+        {
+            Button = true;
+        }
     }
 
     public void OnMoveUI(InputValue Value)
     {
         move = Value.Get<Vector2>();
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    private void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+    public void OnPause(InputValue value)
+    {
+        if (GameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+    }
+
+    public void OnLoadStart()
+    {
+        SceneManager.LoadScene("Start");
     }
 }
