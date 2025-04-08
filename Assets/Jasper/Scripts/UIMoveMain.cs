@@ -13,7 +13,7 @@ public class UIMove : OpenControls
     private void Start()
     {
         TimerMove = TimeMove;
-        GameIsPaused = true;
+        PauseTrue.GameIsPaused = true;
     }
 
     private void Update()

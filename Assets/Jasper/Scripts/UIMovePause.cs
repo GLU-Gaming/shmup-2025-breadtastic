@@ -120,7 +120,7 @@ public class UIMovePause : OpenControls
             }
         }
 
-        if (GameIsPaused)
+        if (PauseTrue.GameIsPaused)
         {
             Move();
         }

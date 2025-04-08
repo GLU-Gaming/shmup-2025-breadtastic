@@ -31,7 +31,9 @@ public class Rumble : MonoBehaviour
                 CurentHigh = 0;
             }
 
-            if (PauseMenu.GameIsPaused)
+
+
+            if (PauseTrue.GameIsPaused)
             {
                 pad.SetMotorSpeeds(0f, 0f);
             }
