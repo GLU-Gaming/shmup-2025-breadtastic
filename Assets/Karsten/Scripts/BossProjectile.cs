@@ -1,29 +1,34 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class BossProjectile : MonoBehaviour
 {
-    public float damage = 2f; // Damage dealt by the projectile
-    public float freezeDuration; // Duration to freeze the player
+    public float damage = 2f; // Schade die de projectile toebrengt aan de speler
+    public float freezeDuration = 2f; // Duur van het bevriezingseffect
 
-    void OnCollisionEnter(Collision collision)
+    void Start()
     {
-        Debug.Log($"BossProjectile collided with: {collision.gameObject.name}");
+        // Zorg ervoor dat de collider is ingesteld op "Is Trigger"
+        Collider collider = GetComponent<Collider>();
+        collider.isTrigger = true;
 
-        // Check if the projectile hits the player
-        if (collision.gameObject.CompareTag("Player"))
+        // Zorg ervoor dat de rigidbody correct is ingesteld
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        // Controleer of de projectile de speler raakt
+        // Controleer of de projectile de speler raakt
+        Player player = other.GetComponent<Player>();
+        if (player != null)
         {
-            Debug.Log("BossProjectile hit the Player");
-
-            // Damage and freeze the player
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null)
-            {
-                player.TakeDamage((int)damage); // Apply damage to the player
-                player.Freeze(freezeDuration); // Freeze the player
-            }
-
-            // Destroy the projectile
-            Destroy(gameObject);
+            Debug.Log("BossProjectile hit the Player"); // Debug log
+            player.TakeDamage((int)damage); // Breng schade toe aan de speler
+            player.Freeze(freezeDuration); // Bevries de speler
+            Destroy(gameObject); // Vernietig de projectile
         }
     }
 }

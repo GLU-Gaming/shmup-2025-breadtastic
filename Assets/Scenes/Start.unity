@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1151839068}
         m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
         m_MethodName: ControlsUnActive
         m_Mode: 1
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   active: 0
   offset: {x: -270, y: -55}
   Button: 0
+  pauseMenuUI: {fileID: 0}
   TimeMove: 0.3
 --- !u!1 &1158871571
 GameObject:

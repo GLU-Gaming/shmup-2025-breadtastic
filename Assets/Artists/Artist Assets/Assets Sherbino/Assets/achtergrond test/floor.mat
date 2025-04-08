@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wall
+  m_Name: floor
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -32,7 +32,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 150b3975b334aa144b9b5a8cbfa7d98d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 542170ab0f02b074898f58c34b66596d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
@@ -56,8 +56,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 150b3975b334aa144b9b5a8cbfa7d98d, type: 3}
-        m_Scale: {x: 1.77, y: 0.98}
+        m_Texture: {fileID: 2800000, guid: 542170ab0f02b074898f58c34b66596d, type: 3}
+        m_Scale: {x: 3.57, y: 2.22}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
         m_Texture: {fileID: 0}
@@ -128,8 +128,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 150b3975b334aa144b9b5a8cbfa7d98d, type: 3}
-        m_Scale: {x: 1.77, y: 0.98}
+        m_Texture: {fileID: 2800000, guid: 542170ab0f02b074898f58c34b66596d, type: 3}
+        m_Scale: {x: 3.57, y: 2.22}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
         m_Texture: {fileID: 0}
@@ -549,7 +549,7 @@ Material:
     - emissive: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6425325583054644892
+--- !u!114 &1735860917018021677
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
