@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public float health = 100; // Aantal levens van de boss
+    public float damage = 10f; // Schade die de boss toebrengt aan de speler
 
     void Start()
     {
@@ -43,6 +44,14 @@ public class Boss : MonoBehaviour
             Debug.Log("Boss hit by PlayerLaser");
             TakeDamage(playerLaser.damage); // Verminder het aantal levens van de boss met de schade van de laser
             Destroy(collision.gameObject); // Vernietig de laser
+        }
+
+        // Controleer of de boss de speler raakt
+        Player player = collision.GetComponent<Player>();
+        if (player)
+        {
+            Debug.Log("Boss hit the Player");
+            player.TakeDamage((int)damage); // Breng schade toe aan de speler
         }
     }
 }
