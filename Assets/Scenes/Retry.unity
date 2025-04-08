@@ -1063,7 +1063,7 @@ MonoBehaviour:
   ImageArrow: {fileID: 947563757}
   state: 0
   active: 0
-  offset: {x: 0, y: 0}
+  offset: {x: -190, y: -30}
   Button: 0
   pauseMenuUI: {fileID: 0}
   CurentMove: {x: 0, y: 0}
