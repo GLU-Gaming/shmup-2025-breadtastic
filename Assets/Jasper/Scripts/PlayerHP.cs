@@ -42,7 +42,7 @@ public class Helt : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
 
-        Debug.Log($"Player collided with: {collision.gameObject.name}");
+       // Debug.Log($"Player collided with: {collision.gameObject.name}");
 
         // Check if the player is hit by an enemy bullet
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
@@ -65,11 +65,15 @@ public class Helt : MonoBehaviour
         }
     }
 
-    public void HPBar(int Lives)
+    public void HPBar(int Lives, bool Display = true)
     {
+        CurentHP = Lives;
         HPUI.fillAmount = (float)CurentHP / MaxHP;
 
-        StartCoroutine(playerFlash());
+        if (Display)
+        {
+            StartCoroutine(playerFlash());
+        }
     }
 
     IEnumerator playerFlash()
