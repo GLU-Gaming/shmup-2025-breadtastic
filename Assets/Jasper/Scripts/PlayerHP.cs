@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
@@ -8,12 +9,9 @@ using UnityEngine.UI;
 public class Helt : MonoBehaviour
 {
     [SerializeField] private int MaxHP = 15;
-    private bool half = false;
-    public int CurentHP;
-    [SerializeField] private List<GameObject> HPUIList = new List<GameObject>();
-    public int CurentUI;
-    [SerializeField] GameObject broken;
-    [SerializeField] private float End = 27.5f;
+    private int CurentHP;
+    [SerializeField] private Image HPUI;
+    private int CurentUI;
     [SerializeField] Material playerMat1;
     [SerializeField] Material playerMat2;
     [SerializeField] Material playerMat3;
@@ -28,7 +26,7 @@ public class Helt : MonoBehaviour
 
     void Start()
     {
-        CurentUI = 1+(MaxHP - 1)/2;
+        CurentUI = CurentHP;
 
         rumble = FindFirstObjectByType<Rumble>();
 
@@ -44,6 +42,7 @@ public class Helt : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+
         Debug.Log($"Player collided with: {collision.gameObject.name}");
 
         // Check if the player is hit by an enemy bullet
@@ -55,10 +54,6 @@ public class Helt : MonoBehaviour
             {
                 rumble.StartRumble(0.75f, 1f, 0.5f, 2);
             }
-            CurentHP -= enemyBullet.damage; // Decrement health by the damage amount
-            CurentHP = Mathf.Max(CurentHP, 0); // Ensure health does not go below 0
-            HPBar();
-            Destroy(collision.gameObject); // Destroy the enemy bullet
         }
 
         // Check if the player is hit by an enemy
@@ -70,15 +65,12 @@ public class Helt : MonoBehaviour
             {
                 rumble.StartRumble(0.25f, 1f, 0.5f, 2);
             }
-            CurentHP -= 1; // Decrement health by 1
-            CurentHP = Mathf.Max(CurentHP, 0); // Ensure health does not go below 0
-            HPBar();
-            Destroy(collision.gameObject); // Destroy the enemy
         }
     }
 
-    public void HPBar()
+    public void HPBar(int Lives)
     {
+<<<<<<< Updated upstream
         // Handle healing
         while (CurentUI < CurentHP / 2) // Process only the healing
         {
@@ -120,6 +112,9 @@ public class Helt : MonoBehaviour
             }
             broken.transform.position -= new Vector3(End, 0);
         }
+=======
+        HPUI.fillAmount = Lives / CurentUI;
+>>>>>>> Stashed changes
 
         StartCoroutine(playerFlash());
     }

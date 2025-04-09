@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         if (playerHP != null)
         {
             // Corrected the method call to match the Helt class implementation
-            playerHP.CurentHP = lives; // Sync the health bar with the player's lives
+            playerHP.HPBar(lives); // Sync the health bar with the player's lives
         }
     }
 
@@ -73,8 +73,7 @@ public class Player : MonoBehaviour
 
         if (playerHP != null)
         {
-            playerHP.CurentHP = lives; // Sync the health bar with the player's lives
-            playerHP.HPBar(); // Update the health bar
+            playerHP.HPBar(lives); // Sync the health bar with the player's lives & Update the health bar;
         }
 
         if (lives <= 0)
