@@ -491,7 +491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 839755233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028287224}
+        m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
+        m_MethodName: retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &839755233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,7 +1198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1807244783}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028287224}
+        m_TargetAssemblyTypeName: OpenControls, Assembly-CSharp
+        m_MethodName: OnLoadStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1807244783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,7 +1302,7 @@ MonoBehaviour:
   ImageArrow: {fileID: 308166912}
   state: 0
   active: 0
-  offset: {x: 0, y: 0}
+  offset: {x: -146, y: -40}
   Button: 0
   pauseMenuUI: {fileID: 0}
   CurentMove: {x: 0, y: 0}
@@ -1295,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 1f200c50a6f0f2848937da0fbc1b7500, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
