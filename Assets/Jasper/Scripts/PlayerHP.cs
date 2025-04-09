@@ -9,9 +9,8 @@ using UnityEngine.UI;
 public class Helt : MonoBehaviour
 {
     [SerializeField] private int MaxHP = 15;
-    private int CurentHP;
+    [SerializeField] int CurentHP;
     [SerializeField] private Image HPUI;
-    private int CurentUI;
     [SerializeField] Material playerMat1;
     [SerializeField] Material playerMat2;
     [SerializeField] Material playerMat3;
@@ -26,7 +25,7 @@ public class Helt : MonoBehaviour
 
     void Start()
     {
-        CurentUI = CurentHP;
+        CurentHP = MaxHP;
 
         rumble = FindFirstObjectByType<Rumble>();
 
@@ -70,7 +69,7 @@ public class Helt : MonoBehaviour
 
     public void HPBar(int Lives)
     {
-        HPUI.fillAmount = Lives / CurentUI;
+        HPUI.fillAmount = (float)CurentHP / MaxHP;
 
         StartCoroutine(playerFlash());
     }
