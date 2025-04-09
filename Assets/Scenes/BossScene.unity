@@ -1661,6 +1661,10 @@ PrefabInstance:
       propertyPath: beamEndRenderer
       value: 
       objectReference: {fileID: 612559610}
+    - target: {fileID: 9051049746830188451, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
+      propertyPath: beamGrowthSpeed
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
