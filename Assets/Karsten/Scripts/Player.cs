@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool Display = true)
     {
         Debug.Log($"Player took {damage} damage"); // Log the damage taken
         lives -= damage; // Reduce the player's lives by the damage amount
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
         if (playerHP != null)
         {
-            playerHP.HPBar(lives); // Sync the health bar with the player's lives & Update the health bar;
+            playerHP.HPBar(lives, Display); // Sync the health bar with the player's lives & Update the health bar;
         }
 
         if (lives <= 0)
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         BossProjectile bossProjectile = collision.GetComponent<BossProjectile>();
         if (bossProjectile)
         {
-            Debug.Log("Player hit by BossProjectile"); // Log that the player was hit by a boss projectile
+            //Debug.Log("Player hit by BossProjectile"); // Log that the player was hit by a boss projectile
             TakeDamage((int)bossProjectile.damage); // Reduce the player's lives by the projectile's damage
             Freeze(bossProjectile.freezeDuration); // Apply the freeze effect to the player
             Destroy(collision.gameObject); // Destroy the boss projectile

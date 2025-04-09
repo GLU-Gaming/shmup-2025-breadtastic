@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Bullet collided with: {collision.gameObject.name}");
+        //Debug.Log($"Bullet collided with: {collision.gameObject.name}");
 
         // Controleer of de kogel een vijand raakt
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Bullet triggered with: {other.gameObject.name}");
+        //Debug.Log($"Bullet triggered with: {other.gameObject.name}");
 
         // Controleer of de kogel een vijand raakt
         Enemy enemy = other.GetComponent<Enemy>();

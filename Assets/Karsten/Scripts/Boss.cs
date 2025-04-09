@@ -81,7 +81,7 @@ public class Boss : MonoBehaviour
         Bullet playerBullet = collision.GetComponent<Bullet>();
         if (playerBullet)
         {
-            Debug.Log("Boss hit by PlayerBullet");
+            //Debug.Log("Boss hit by PlayerBullet");
             TakeDamage(playerBullet.damage); // Reduce the boss's health by the bullet's damage
             Destroy(collision.gameObject); // Destroy the bullet
         }
@@ -90,7 +90,7 @@ public class Boss : MonoBehaviour
         Laser playerLaser = collision.GetComponent<Laser>();
         if (playerLaser)
         {
-            Debug.Log("Boss hit by PlayerLaser");
+            //Debug.Log("Boss hit by PlayerLaser");
             TakeDamage(playerLaser.damage); // Reduce the boss's health by the laser's damage
             Destroy(collision.gameObject); // Destroy the laser
         }
@@ -99,7 +99,7 @@ public class Boss : MonoBehaviour
         Player player = collision.GetComponent<Player>();
         if (player)
         {
-            Debug.Log("Boss hit the Player");
+            //Debug.Log("Boss hit the Player");
             player.TakeDamage((int)damage); // Deal damage to the player
         }
     }

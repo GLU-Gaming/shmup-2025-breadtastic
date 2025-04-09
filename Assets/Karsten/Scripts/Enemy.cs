@@ -80,16 +80,23 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         // Check if the current scene is NOT the boss scene
-        if (SceneManager.GetActiveScene().name != "BossScene") // Replace "BossScene" with the actual name of your boss scene
+        if (SceneManager.GetActiveScene().name == "BossScene") // Replace "BossScene" with the actual name of your boss scene
         {
             // Add score when the enemy dies
-            ScoreManager.instance.AddScore(scoreValue);
+            try
+            {
+                ScoreManager manager = FindFirstObjectByType<ScoreManager>();
+                manager.AddScore(scoreValue);
+            } catch (Exception err)
+            {
+                print(err);
+            }
 
             // Heal the player by 1 HP
-            Player player = FindObjectOfType<Player>();
-            if (player != null && player.playerHP != null)
+            Player player = FindFirstObjectByType<Player>();
+            if (player != null)
             {
-                player.lives += 1; // Heal the player by 1 HP
+                player.TakeDamage(-1, false); // Heal the player by 1 HP
             }
         }
 

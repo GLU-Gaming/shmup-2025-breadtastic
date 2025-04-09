@@ -205,17 +205,32 @@ public class NewShooting : MonoBehaviour
         Vector3 beamEnd = beamSpawnPoint.position + beamSpawnPoint.right * currentBeamLength;
 
         // Hit detectie
+        GameObject hitObject = null;
         bool hasHit = Physics.Raycast(beamSpawnPoint.position, beamSpawnPoint.right, out hitInfo, currentBeamLength, hitLayers);
-
+        if (hasHit)
+        {
+            hitObject = hitInfo.collider.gameObject;
+        }
         if (hasHit)
         {
             beamEnd = hitInfo.point;
 
-            // Enemy Damage
-            Enemy health = hitInfo.collider.GetComponent<Enemy>();
-            if (health != null)
+            if(hitObject.name == "WeddingCake")
             {
-            health.TakeDamage(damage * Time.deltaTime);
+                Boss BossHealth = hitInfo.collider.GetComponent<Boss>();
+                if(BossHealth != null)
+                {
+                    BossHealth.TakeDamage(damage * Time.deltaTime);
+                }
+            } else
+            {
+                // Enemy Damage
+
+                Enemy health = hitInfo.collider.GetComponent<Enemy>();
+                if (health != null)
+                {
+                    health.TakeDamage(damage * Time.deltaTime);
+                }
             }
         }
 
