@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 130835718}
   score: 0
+  bossSceneName: BossScene
 --- !u!4 &311192055
 Transform:
   m_ObjectHideFlags: 0
