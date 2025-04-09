@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
             Player player = FindObjectOfType<Player>();
             if (player != null && player.playerHP != null)
             {
-                player.playerHP.Heal(1); // Heal the player by 1 HP
+                player.lives += 1; // Heal the player by 1 HP
             }
         }
 
