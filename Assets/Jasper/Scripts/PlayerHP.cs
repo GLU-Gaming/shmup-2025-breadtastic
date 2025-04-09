@@ -122,4 +122,10 @@ public class Helt : MonoBehaviour
         playerMat2.SetColor("_1st_ShadeColor", secondColor1);
         playerMat3.SetColor("_1st_ShadeColor", secondColor2);
     }
+    public void Heal(int amount)
+    {
+        CurentHP = Mathf.Min(CurentHP + amount, MaxHP); // Increase health but do not exceed MaxHP
+        HPBar(); // Update the health bar
+        Debug.Log($"Player healed by {amount}. Current HP: {CurentHP}");
+    }
 }
