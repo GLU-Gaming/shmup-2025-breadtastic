@@ -1737,6 +1737,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 516005563}
     m_Modifications:
     - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
+      propertyPath: End
+      value: 27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267272837864513057, guid: 95d75c70f2a91524ab78211cedb97631, type: 3}
       propertyPath: broken
       value: 
       objectReference: {fileID: 1080621614}
@@ -2372,8 +2376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.59995, y: 0}
-  m_SizeDelta: {x: 33.689, y: 0}
+  m_AnchoredPosition: {x: 404.1, y: 0.19000244}
+  m_SizeDelta: {x: 33.689, y: 0.37999544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080621616
 MonoBehaviour:
@@ -2400,7 +2404,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.207
+  m_FillAmount: 0.251
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0

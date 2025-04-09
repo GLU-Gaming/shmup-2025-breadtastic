@@ -96,9 +96,8 @@ public class Helt : MonoBehaviour
                 }
                 half = true;
             }
+            broken.transform.position -= new Vector3(End, 0);
         }
-
-        broken.transform.position -= new Vector3(End, 0);
 
         StartCoroutine(playerFlash());
     }
