@@ -29,4 +29,8 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Bullet hit: {other.gameObject.name}");
+    }
 }

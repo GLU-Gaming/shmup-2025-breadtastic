@@ -26,10 +26,10 @@ MonoBehaviour:
     m_path: Assets/Scenes/MainScene 2.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Retry.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/BossScene.unity
   - m_enabled: 0
     m_path: Assets/Scenes/SampleScene.unity
-  - m_enabled: 0
-    m_path: Assets/Scenes/BossScene.unity
   - m_enabled: 0
     m_path: Assets/Scenes/MainScene.unity
   m_ScriptingDefines: []

@@ -46,21 +46,22 @@ public class Helt : MonoBehaviour
     {
         Debug.Log($"Player collided with: {collision.gameObject.name}");
 
-        // Controleer of de speler een vijandelijke kogel raakt
+        // Check if the player is hit by an enemy bullet
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
-        if (enemyBullet)    
+        if (enemyBullet)
         {
             Debug.Log("Player hit by Enemy");
             if (rumble)
             {
                 rumble.StartRumble(0.75f, 1f, 0.5f, 2);
             }
-            CurentHP = enemyBullet.damage;
+            CurentHP -= enemyBullet.damage; // Decrement health by the damage amount
+            CurentHP = Mathf.Max(CurentHP, 0); // Ensure health does not go below 0
             HPBar();
-            Destroy(collision.gameObject); // Vernietig de vijand            
+            Destroy(collision.gameObject); // Destroy the enemy bullet
         }
 
-        // Controleer of de speler een vijand raakt
+        // Check if the player is hit by an enemy
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy)
         {
@@ -69,50 +70,37 @@ public class Helt : MonoBehaviour
             {
                 rumble.StartRumble(0.25f, 1f, 0.5f, 2);
             }
-            CurentHP = 1;
+            CurentHP -= 1; // Decrement health by 1
+            CurentHP = Mathf.Max(CurentHP, 0); // Ensure health does not go below 0
             HPBar();
-
-            Destroy(collision.gameObject); // Vernietig de vijand
+            Destroy(collision.gameObject); // Destroy the enemy
         }
     }
 
-    private void HPBar()
+    public void HPBar()
     {
-        for(int i = 0; i < CurentHP; i++)
+        while (CurentUI > CurentHP / 2) // Process only the damage taken
         {
             if (half)
             {
-                Image UI = HPUIList[CurentUI - 1].GetComponent<Image>();
+                Image UI = HPUIList[CurentUI].GetComponent<Image>();
                 UI.fillAmount = 0.5f;
                 half = false;
             }
             else
             {
-                for (int j = 0; j < HPUIList.Count; j++)
+                if (CurentUI > 0)
                 {
-                    HPUIList[j].SetActive(false);
-                }
-
-                CurentUI -= 1;
-
-                if (CurentUI < 0)
-                {
-                    CurentUI = 0;
-                }
-
-                for (int j = 0; j < CurentUI; j++)
-                {
-                    HPUIList[j].SetActive(true);
+                    HPUIList[CurentUI - 1].SetActive(false);
+                    CurentUI -= 1;
                 }
                 half = true;
-                Debug.Log("okay");
             }
-
-            broken.transform.position -= new Vector3(End, 0);
         }
 
-            StartCoroutine(playerFlash());
+        broken.transform.position -= new Vector3(End, 0);
 
+        StartCoroutine(playerFlash());
     }
 
     IEnumerator playerFlash()

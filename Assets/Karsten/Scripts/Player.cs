@@ -69,27 +69,22 @@ public class Player : MonoBehaviour
     {
         Debug.Log($"Player took {damage} damage"); // Log the damage taken
         lives -= damage; // Reduce the player's lives by the damage amount
+        lives = Mathf.Max(lives, 0); // Ensure lives do not go below 0
+
+        if (playerHP != null)
+        {
+            playerHP.CurentHP = lives; // Sync the health bar with the player's lives
+            playerHP.HPBar(); // Update the health bar
+        }
 
         if (lives <= 0)
         {
-            lives = 0; // Ensure the player's lives do not go below 0
             Debug.Log("Player is dead. Calling OnDead.Dead method."); // Log that the player is dead
             if (onDead != null)
             {
-                Debug.Log("Calling OnDead.Dead(true)"); // Log that the Dead method is being called
                 onDead.Dead(true); // Notify the OnDead script that the player is dead
             }
-            else
-            {
-                Debug.LogError("OnDead reference is null in Player script!"); // Log an error if the OnDead reference is null
-            }
             Destroy(gameObject); // Destroy the player object
-        }
-
-        // Update the health bar (if applicable)
-        if (playerHP != null)
-        {
-            playerHP.CurentHP = lives; // Directly update the CurentHP property
         }
     }
 

@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -66,9 +68,8 @@ public class Enemy : MonoBehaviour
     // Functie om schade toe te brengen aan de vijand
     public void TakeDamage(float damage)
     {
+        Debug.Log($"Enemy took {damage} damage");
         currentHealth -= damage;
-
-        // Controleer of de vijand dood is
         if (currentHealth <= 0)
         {
             Die();
@@ -78,13 +79,17 @@ public class Enemy : MonoBehaviour
     // Functie om de vijand te vernietigen
     void Die()
     {
-        // Add score when the enemy dies
-        ScoreManager.instance.AddScore(scoreValue);
+        // Check if the current scene is NOT the boss scene
+        if (SceneManager.GetActiveScene().name != "BossScene") // Replace "BossScene" with the actual name of your boss scene
+        {
+            // Add score when the enemy dies
+            ScoreManager.instance.AddScore(scoreValue);
+        }
 
-        // Activeer de sterfgebeurtenis
+        // Activate the death event
         OnEnemyDeath?.Invoke(gameObject);
 
-        // Vernietig de vijand
+        // Destroy the enemy
         Destroy(gameObject);
     }
 }
