@@ -68,9 +68,6 @@ public class audioManager : MonoBehaviour
     [Header("Mixer")]
     public AudioMixer mixer;
 
-    public bool click;
-    public bool hover;
-
     private void Start()
     {
         StopAllSounds();
