@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 // Ensure the Boss object has a Collider component
 [RequireComponent(typeof(Collider))]
 public class Boss : MonoBehaviour
 {
     public float health = 1000; // Total health of the boss
+    public float maxHealth = 1000; // Maximum health of the boss
     public float damage = 1f; // Damage the boss deals to the player
     public GameObject chargingEnemyPrefab; // Prefab for the charging enemy
     public GameObject normalEnemyPrefab; // Prefab for the normal enemy
     public Transform spawnPoint; // Spawn point for the enemies
+    public Slider healthBar; // Reference to the health bar UI
 
     private float lastHealthCheckpoint; // Tracks the last health checkpoint
 
@@ -20,11 +23,24 @@ public class Boss : MonoBehaviour
 
         // Initialize the last health checkpoint
         lastHealthCheckpoint = health;
+
+        // Initialize the health bar
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = health;
+        }
     }
 
     public void TakeDamage(float damage)
     {
         health -= damage; // Reduce the boss's health by the damage amount
+
+        // Update the health bar
+        if (healthBar != null)
+        {
+            healthBar.value = health;
+        }
 
         // Check if the boss's health has dropped by 250 or more since the last checkpoint
         if (lastHealthCheckpoint - health >= 250)
