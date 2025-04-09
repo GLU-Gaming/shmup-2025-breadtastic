@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public float overlayDuration = 0.5f; // Duration for which the overlay is visible
     private float overlayTimer; // Timer for the hit overlay
 
+    private audioManager audManager;
+
     public void Start()
     {
         onDead = FindFirstObjectByType<OnDead>(); // Find the OnDead script in the scene
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
             // Corrected the method call to match the Helt class implementation
             playerHP.HPBar(lives); // Sync the health bar with the player's lives
         }
+
+        audManager = FindFirstObjectByType<audioManager>();
     }
 
     private void Update()
@@ -74,10 +78,12 @@ public class Player : MonoBehaviour
         if (playerHP != null)
         {
             playerHP.HPBar(lives, Display); // Sync the health bar with the player's lives & Update the health bar;
+            audManager.instance.PlayPlayerHitSound();
         }
 
         if (lives <= 0)
         {
+            audManager.instance.PlayPlayerDeathSound();
             Debug.Log("Player is dead. Calling OnDead.Dead method."); // Log that the player is dead
             if (onDead != null)
             {

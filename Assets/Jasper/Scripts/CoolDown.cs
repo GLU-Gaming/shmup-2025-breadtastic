@@ -7,15 +7,27 @@ public class CoolDown : MonoBehaviour
     public float LaserCooldown = 0f;
     public Image image;
 
+    private audioManager audManager;
+
     void Start()
     {
         LaserCooldown = LaserTimeCooldown;
+
+        audManager = Object.FindFirstObjectByType<audioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        LaserCooldown += Time.deltaTime;
+        if (LaserCooldown != LaserTimeCooldown)
+        {
+            LaserCooldown += Time.deltaTime;
+            if (LaserCooldown > LaserTimeCooldown)
+            {
+                audManager.instance.PlayChargedSound();
+                LaserCooldown = Mathf.Clamp(LaserCooldown, 0, LaserTimeCooldown);
+            }
+        }
         UpdateCooldown();
     }
 
