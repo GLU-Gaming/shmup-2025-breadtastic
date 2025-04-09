@@ -70,51 +70,7 @@ public class Helt : MonoBehaviour
 
     public void HPBar(int Lives)
     {
-<<<<<<< Updated upstream
-        // Handle healing
-        while (CurentUI < CurentHP / 2) // Process only the healing
-        {
-            if (half)
-            {
-                Image UI = HPUIList[CurentUI].GetComponent<Image>();
-                UI.fillAmount = 1.0f; // Restore the UI element to full
-                half = false;
-            }
-            else
-            {
-                if (CurentUI < HPUIList.Count)
-                {
-                    HPUIList[CurentUI].SetActive(true); // Reactivate the UI element
-                    CurentUI += 1;
-                }
-                half = true;
-            }
-            broken.transform.position += new Vector3(End, 0); // Adjust the position
-        }
-
-        // Handle damage
-        while (CurentUI > CurentHP / 2) // Process only the damage taken
-        {
-            if (half)
-            {
-                Image UI = HPUIList[CurentUI].GetComponent<Image>();
-                UI.fillAmount = 0.5f;
-                half = false;
-            }
-            else
-            {
-                if (CurentUI > 0)
-                {
-                    HPUIList[CurentUI - 1].SetActive(false);
-                    CurentUI -= 1;
-                }
-                half = true;
-            }
-            broken.transform.position -= new Vector3(End, 0);
-        }
-=======
         HPUI.fillAmount = Lives / CurentUI;
->>>>>>> Stashed changes
 
         StartCoroutine(playerFlash());
     }
@@ -138,11 +94,5 @@ public class Helt : MonoBehaviour
         playerMat1.SetColor("_1st_ShadeColor", secondColor1);
         playerMat2.SetColor("_1st_ShadeColor", secondColor1);
         playerMat3.SetColor("_1st_ShadeColor", secondColor2);
-    }
-    public void Heal(int amount)
-    {
-        CurentHP = Mathf.Min(CurentHP + amount, MaxHP); // Increase health but do not exceed MaxHP
-        HPBar(); // Update the health bar
-        Debug.Log($"Player healed by {amount}. Current HP: {CurentHP}");
     }
 }
