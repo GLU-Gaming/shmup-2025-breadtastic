@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 1f200c50a6f0f2848937da0fbc1b7500, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -123,7 +123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 15
+  onDead: {fileID: 0}
+  playerHP: {fileID: 0}
   Isdead: 1
+  speed: 5
+  hitOverlay: {fileID: 0}
+  overlayDuration: 0.5
 --- !u!114 &4235300993275803976
 MonoBehaviour:
   m_ObjectHideFlags: 0
