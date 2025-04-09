@@ -84,6 +84,13 @@ public class Enemy : MonoBehaviour
         {
             // Add score when the enemy dies
             ScoreManager.instance.AddScore(scoreValue);
+
+            // Heal the player by 1 HP
+            Player player = FindObjectOfType<Player>();
+            if (player != null && player.playerHP != null)
+            {
+                player.playerHP.Heal(1); // Heal the player by 1 HP
+            }
         }
 
         // Activate the death event

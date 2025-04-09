@@ -79,6 +79,28 @@ public class Helt : MonoBehaviour
 
     public void HPBar()
     {
+        // Handle healing
+        while (CurentUI < CurentHP / 2) // Process only the healing
+        {
+            if (half)
+            {
+                Image UI = HPUIList[CurentUI].GetComponent<Image>();
+                UI.fillAmount = 1.0f; // Restore the UI element to full
+                half = false;
+            }
+            else
+            {
+                if (CurentUI < HPUIList.Count)
+                {
+                    HPUIList[CurentUI].SetActive(true); // Reactivate the UI element
+                    CurentUI += 1;
+                }
+                half = true;
+            }
+            broken.transform.position += new Vector3(End, 0); // Adjust the position
+        }
+
+        // Handle damage
         while (CurentUI > CurentHP / 2) // Process only the damage taken
         {
             if (half)

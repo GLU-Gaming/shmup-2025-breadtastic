@@ -34,18 +34,8 @@ public class ScoreManager : MonoBehaviour
         score += points;
         UpdateScoreText();
 
-        // Heal the player by 1 HP for each kill
-        if (points > 0) // Assuming points > 0 indicates a kill
-        {
-            Player player = FindObjectOfType<Player>();
-            if (player != null && player.playerHP != null)
-            {
-                player.playerHP.Heal(1); // Heal the player by 1 HP
-            }
-        }
-
         // Check if the score reaches 700
-        if (score >= 600)
+        if (score >= 700)
         {
             TriggerBossFight();
         }
