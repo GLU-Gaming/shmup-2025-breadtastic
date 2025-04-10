@@ -22,8 +22,12 @@ public class Enemy : MonoBehaviour
 
     public event Action<GameObject> OnEnemyDeath; // Gebeurtenis die wordt geactiveerd wanneer de vijand sterft
 
+    private audioManager audManager;
+
     void Start()
     {
+        audManager = FindFirstObjectByType<audioManager>();
+
         // Stel de huidige gezondheid in op de maximale gezondheid
         currentHealth = maxHealth;
         initialYPosition = transform.position.y;
@@ -73,14 +77,15 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-        }
+        } else { audManager.instance.PlayEnemyHitSound(); }
     }
 
     // Functie om de vijand te vernietigen
     void Die()
     {
-        // Check if the current scene is NOT the boss scene
-        if (SceneManager.GetActiveScene().name == "BossScene") // Replace "BossScene" with the actual name of your boss scene
+        audManager.instance.PlayEnemyDeathSound();
+
+        if (SceneManager.GetActiveScene().name == "BossScene")
         {
             // Add score when the enemy dies
             try
