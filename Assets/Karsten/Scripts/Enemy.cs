@@ -34,6 +34,11 @@ public class Enemy : MonoBehaviour
         SetNextFireTime();
     }
 
+    void Awake()
+    {
+        audManager = FindFirstObjectByType<audioManager>();
+    }
+
     void Update()
     {
         // Beweeg de vijand naar links en voeg verticale beweging toe
