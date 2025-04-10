@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 94d8a9ca2df49fe489a370a14c5f759e, type: 3}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: bgmSoundVolume
-      value: 0.475
+      value: 0.641
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: menuClickSound
@@ -501,24 +501,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c16582b7111e604429adf9fe7738ad56, type: 3}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
+      propertyPath: beamSoundVolume
+      value: 0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: menuSoundVolume
-      value: 0.082
+      value: 0.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
+      propertyPath: shootSoundVolume
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: menuclickSoundVolume
-      value: 0.366
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: menuhoverSoundVolume
-      value: 0.366
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: playerhitSoundVolume
-      value: 0.463
+      value: 0.238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
+      propertyPath: playerlossSoundVolume
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: shootSounds.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
+      propertyPath: playervictorySoundVolume
+      value: 0.377
       objectReference: {fileID: 0}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: 'shootSounds.Array.data[0]'
