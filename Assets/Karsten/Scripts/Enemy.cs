@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
     {
         audManager.instance.PlayEnemyDeathSound();
 
-        if (SceneManager.GetActiveScene().name == "BossScene")
+        if (SceneManager.GetActiveScene().name != "BossScene")
         {
             // Add score when the enemy dies
             try
