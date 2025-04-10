@@ -50,11 +50,14 @@ public class NewShooting : MonoBehaviour
     private float buttonMain = 0;
     private float buttonSecondary = 0;
 
+    private audioManager audManager;
+
     public Rumble rumble;
 
     private void Start()
     {
         rumble = FindFirstObjectByType<Rumble>();
+        audManager = FindFirstObjectByType<audioManager>();
 
         // Initialize de line renderers
         InitializeLineRenderer();
@@ -65,7 +68,7 @@ public class NewShooting : MonoBehaviour
     void Update()
     {
         // Controleer of de linkermuisknop is ingedrukt en de cooldown is verstreken
-        if (buttonMain != 0 && Time.time >= nextFireTime)
+        if (buttonMain != 0 && !isFiring && Time.time >= nextFireTime)
         {
             SwitchModel();
             ShootBullet();
@@ -136,6 +139,7 @@ public class NewShooting : MonoBehaviour
 
     void ShootBullet()
     {
+        audManager.instance.PlayShootSound();
         isShooting = true;
 
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint
@@ -273,6 +277,10 @@ public class NewShooting : MonoBehaviour
         {
             ovenClose.SetActive(true);
             ovenOpen.SetActive(false);
+        }
+        if (isFiring)
+        {
+            audManager.instance.PlayBeamSound();
         }
     }
 }

@@ -22,12 +22,21 @@ public class Enemy : MonoBehaviour
 
     public event Action<GameObject> OnEnemyDeath; // Gebeurtenis die wordt geactiveerd wanneer de vijand sterft
 
+    private audioManager audManager;
+
     void Start()
     {
+        audManager = FindFirstObjectByType<audioManager>();
+
         // Stel de huidige gezondheid in op de maximale gezondheid
         currentHealth = maxHealth;
         initialYPosition = transform.position.y;
         SetNextFireTime();
+    }
+
+    void Awake()
+    {
+        audManager = FindFirstObjectByType<audioManager>();
     }
 
     void Update()
@@ -73,39 +82,32 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-        }
+        } else { audManager.instance.PlayEnemyHitSound(); }
     }
 
     // Functie om de vijand te vernietigen
     void Die()
     {
-        // Add score when the enemy dies, but only if it's NOT the boss scene
-        if (SceneManager.GetActiveScene().name != "BossScene")
+        audManager.instance.PlayEnemyDeathSound();
+
+        if (SceneManager.GetActiveScene().name == "BossScene")
         {
+            // Add score when the enemy dies
             try
             {
                 ScoreManager manager = FindFirstObjectByType<ScoreManager>();
-                if (manager != null)
-                {
-                    manager.AddScore(scoreValue);
-                    Debug.Log("Score added: " + scoreValue);
-                }
-                else
-                {
-                    Debug.LogError("ScoreManager not found in the scene.");
-                }
-            }
-            catch (Exception ex)
+                manager.AddScore(scoreValue);
+            } catch (Exception err)
             {
-                Debug.LogError("Error adding score: " + ex.Message);
+                print(err);
             }
-        }
 
-        // Heal the player by 1 HP (if applicable)
-        Player player = FindFirstObjectByType<Player>();
-        if (player != null)
-        {
-            player.TakeDamage(-1, false); // Heal the player by 1 HP
+            // Heal the player by 1 HP
+            Player player = FindFirstObjectByType<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(-1, false); // Heal the player by 1 HP
+            }
         }
 
         // Activate the death event

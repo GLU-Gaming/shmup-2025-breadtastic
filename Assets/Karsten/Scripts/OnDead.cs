@@ -8,6 +8,7 @@ public class OnDead : MonoBehaviour
     [SerializeField] private float timerDeadEnd = 2; // Time to wait before loading the Retry scene
     [SerializeField] private int retrySceneIndex = 1; // Index of the Retry scene in the build settings
 
+
     public void Dead(bool Isdead)
     {
         dead = Isdead; // Set the dead state
