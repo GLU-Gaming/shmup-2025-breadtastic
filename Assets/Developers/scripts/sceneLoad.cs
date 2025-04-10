@@ -5,6 +5,11 @@ public class sceneLoad : MonoBehaviour
 {
     public audioManager audManager;
 
+    void Start()
+    {
+        audManager = FindFirstObjectByType<audioManager>();
+    }
+
     void Awake()
     {
        audManager = FindFirstObjectByType<audioManager>(); 
