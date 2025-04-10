@@ -53,7 +53,9 @@ public class ScoreManager : MonoBehaviour
 
         // Load the boss scene
         if (!string.IsNullOrEmpty(bossSceneName))
-        {   
+        {
+            Rumble rumble = FindFirstObjectByType<Rumble>();
+            rumble.StartRumble(0, 0, 0, 100);
             SceneManager.LoadScene(bossSceneName);
         }
         else
