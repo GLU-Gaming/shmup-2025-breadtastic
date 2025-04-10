@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
 
     public string bossSceneName = "BossScene"; // Name of the boss scene
+    private int scoreValue;
 
     void Awake()
     {
@@ -34,8 +35,8 @@ public class ScoreManager : MonoBehaviour
         score += points;
         UpdateScoreText();
 
-        // Check if the score reaches 700
-        if (score >= 700)
+        // Check if the score reaches 600 and trigger the boss fight
+        if (score >= 600 && SceneManager.GetActiveScene().name != bossSceneName)
         {
             TriggerBossFight();
         }

@@ -79,25 +79,33 @@ public class Enemy : MonoBehaviour
     // Functie om de vijand te vernietigen
     void Die()
     {
-        // Check if the current scene is NOT the boss scene
-        if (SceneManager.GetActiveScene().name == "BossScene") // Replace "BossScene" with the actual name of your boss scene
+        // Add score when the enemy dies, but only if it's NOT the boss scene
+        if (SceneManager.GetActiveScene().name != "BossScene")
         {
-            // Add score when the enemy dies
             try
             {
                 ScoreManager manager = FindFirstObjectByType<ScoreManager>();
-                manager.AddScore(scoreValue);
-            } catch (Exception err)
-            {
-                print(err);
+                if (manager != null)
+                {
+                    manager.AddScore(scoreValue);
+                    Debug.Log("Score added: " + scoreValue);
+                }
+                else
+                {
+                    Debug.LogError("ScoreManager not found in the scene.");
+                }
             }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error adding score: " + ex.Message);
+            }
+        }
 
-            // Heal the player by 1 HP
-            Player player = FindFirstObjectByType<Player>();
-            if (player != null)
-            {
-                player.TakeDamage(-1, false); // Heal the player by 1 HP
-            }
+        // Heal the player by 1 HP (if applicable)
+        Player player = FindFirstObjectByType<Player>();
+        if (player != null)
+        {
+            player.TakeDamage(-1, false); // Heal the player by 1 HP
         }
 
         // Activate the death event
