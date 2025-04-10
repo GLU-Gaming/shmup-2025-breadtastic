@@ -473,9 +473,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c1979def003aa1741beb3e556c12c20d, type: 3}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
+      propertyPath: PlayerLoss
+      value: 
+      objectReference: {fileID: 8300000, guid: e47d5f9803e539542b03022ec365d20a, type: 3}
+    - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: PlayerVictory
       value: 
-      objectReference: {fileID: 8300000, guid: feff99d6f602d9a46bb3d93c7a091634, type: 3}
+      objectReference: {fileID: 8300000, guid: 8102d91fba50a8843965f3d2e13031df, type: 3}
     - target: {fileID: 4848030101793369318, guid: bf84b8cae04af7645a72490f4e5b2e62, type: 3}
       propertyPath: enemyHitSound
       value: 

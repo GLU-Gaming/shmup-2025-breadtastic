@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class NewShooting : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class NewShooting : MonoBehaviour
     private float buttonSecondary = 0;
 
     private audioManager audManager;
+
+    private bool playedBeamSound;
 
     public Rumble rumble;
 
@@ -103,6 +106,7 @@ public class NewShooting : MonoBehaviour
         nextLaserTime = Time.time + laserCooldown;
         CoolDown coolDown = FindFirstObjectByType<CoolDown>();
         coolDown.LaserCooldown = 0;
+        if (!playedBeamSound) { beamSound(); }
         SwitchModel();
         SetBeamActive(true);
 
@@ -115,9 +119,16 @@ public class NewShooting : MonoBehaviour
             yield return new WaitForSeconds(fireRate);
         }
 
+        playedBeamSound = false;
         isFiring = false;
         SetBeamActive(false);
         SwitchModel();
+    }
+
+    void beamSound()
+    {
+        audManager.instance.PlayBeamSound();
+        playedBeamSound = true;
     }
 
     // Als dit niet word gebruikt kan dit niet weg?
@@ -277,10 +288,6 @@ public class NewShooting : MonoBehaviour
         {
             ovenClose.SetActive(true);
             ovenOpen.SetActive(false);
-        }
-        if (isFiring)
-        {
-            audManager.instance.PlayBeamSound();
         }
     }
 }
