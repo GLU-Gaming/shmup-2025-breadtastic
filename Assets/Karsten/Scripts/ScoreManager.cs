@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
 
     public string bossSceneName = "BossScene"; // Name of the boss scene
-    private int scoreValue;
+    private int  scoreValue;
 
     void Awake()
     {
