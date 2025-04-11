@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class audioManager : MonoBehaviour
 {
-    public audioManager instance;
+    public static audioManager instance { get; private set; }
+
 
     [Header("Background Music")]
     public AudioSource bgmSource;
@@ -76,12 +77,16 @@ public class audioManager : MonoBehaviour
     void Awake()
     {
         Debug.Log("awake");
-        if (instance != null)
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            // Zorgt ervoor dat er niet 2 audioManagers zijn want anders kan dat breken
+        }
+        else
         {
             instance = this;
             DontDestroyOnLoad(gameObject); // Zorgt ervoor dat de muziek door kan spelen na de scene change naar de bossfight
         }
-        else { Destroy(gameObject);  } // Zorgt ervoor dat er niet 2 audioManagers zijn want anders kan dat breken
     }
 
     public void StopAllSounds()
@@ -128,24 +133,24 @@ public class audioManager : MonoBehaviour
     }
 
     // Shooting sounds
-    public void PlayShootSound() 
+    public void PlayShootSound()
     {
         if (shootSounds.Length == 0) return;
 
         int rndHitSound = Random.Range(0, shootSounds.Length);
-        mixer.SetFloat("Sound Effects Volume", Mathf.Log10(shootSoundVolume) * 20); sfxSource.PlayOneShot(shootSounds[rndHitSound]); 
+        mixer.SetFloat("Sound Effects Volume", Mathf.Log10(shootSoundVolume) * 20); sfxSource.PlayOneShot(shootSounds[rndHitSound]);
     }
     public void PlayBeamSound() { mixer.SetFloat("Sound Effects Volume", Mathf.Log10(beamSoundVolume) * 20); sfxSource.PlayOneShot(beamSound); }
     public void PlayChargedSound() { mixer.SetFloat("Sound Effects Volume", Mathf.Log10(chargedSoundVolume) * 20); sfxSource.PlayOneShot(beamCharged); }
 
     // Hit sounds
     public void PlayEnemyHitSound() { mixer.SetFloat("Sound Effects Volume", Mathf.Log10(enemyhitSoundVolume) * 20); sfxSource.PlayOneShot(enemyHitSound); }
-    public void PlayPlayerHitSound() 
+    public void PlayPlayerHitSound()
     {
         if (playerHitSounds.Length == 0) return;
 
         int rndHitSound = Random.Range(0, playerHitSounds.Length);
-        mixer.SetFloat("Sound Effects Volume", Mathf.Log10(playerhitSoundVolume) * 20); sfxSource.PlayOneShot(playerHitSounds[rndHitSound]); 
+        mixer.SetFloat("Sound Effects Volume", Mathf.Log10(playerhitSoundVolume) * 20); sfxSource.PlayOneShot(playerHitSounds[rndHitSound]);
     }
 
     // Menu sounds

@@ -109,6 +109,7 @@ public class EnemySpawner : MonoBehaviour
 
     void HandleEnemyDeath(GameObject enemy)
     {
+        Debug.Log("Removing enemy on death");
         // Verwijder de vijand uit de lijst wanneer deze sterft
         enemies.Remove(enemy);
     }

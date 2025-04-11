@@ -6,7 +6,7 @@ public class ChargingEnemy : Enemy
     public float chargeSpeed = 5.0f; // De snelheid waarmee de vijand naar de speler chargeert
     private Transform playerTransform;
 
-    public static event Action<GameObject> OnEnemyDeath;
+    new public static event Action<GameObject> OnEnemyDeath;
 
     void Start()
     {

@@ -18,14 +18,14 @@ public class Helt : MonoBehaviour
     private Color secondColor2 = new Color(0.4745098f, 0.4392156f, 0.4862745f);
 
     private Rumble rumble;
-    private audioManager audManager;
 
-    void Start()
+
+    void Awake()
     {
         CurentHP = MaxHP;
 
         rumble = FindFirstObjectByType<Rumble>();
-        audManager = FindFirstObjectByType<audioManager>();
+    
 
         // Spelers kleuren zetten naar default kleur
         playerMat1.SetColor("_BaseColor", originalColor1);
@@ -67,7 +67,7 @@ public class Helt : MonoBehaviour
     {
         CurentHP = Lives;
         HPUI.fillAmount = (float)CurentHP / MaxHP;
-        audManager.instance.PlayPlayerHitSound();
+        audioManager.instance.PlayPlayerHitSound();
 
         if (Display)
         {

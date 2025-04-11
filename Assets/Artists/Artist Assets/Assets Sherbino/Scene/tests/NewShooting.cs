@@ -51,7 +51,7 @@ public class NewShooting : MonoBehaviour
     private float buttonMain = 0;
     private float buttonSecondary = 0;
 
-    private audioManager audManager;
+
 
     private bool playedBeamSound;
 
@@ -60,7 +60,7 @@ public class NewShooting : MonoBehaviour
     private void Start()
     {
         rumble = FindFirstObjectByType<Rumble>();
-        audManager = FindFirstObjectByType<audioManager>();
+    
 
         // Initialize de line renderers
         InitializeLineRenderer();
@@ -127,7 +127,7 @@ public class NewShooting : MonoBehaviour
 
     void beamSound()
     {
-        audManager.instance.PlayBeamSound();
+        audioManager.instance.PlayBeamSound();
         playedBeamSound = true;
     }
 
@@ -150,7 +150,7 @@ public class NewShooting : MonoBehaviour
 
     void ShootBullet()
     {
-        audManager.instance.PlayShootSound();
+        audioManager.instance.PlayShootSound();
         isShooting = true;
 
         // Maak een nieuwe kogel aan op de positie van de BulletSpawnpoint

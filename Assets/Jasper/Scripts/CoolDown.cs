@@ -24,7 +24,7 @@ public class CoolDown : MonoBehaviour
             LaserCooldown += Time.deltaTime;
             if (LaserCooldown > LaserTimeCooldown)
             {
-                audManager.instance.PlayChargedSound();
+                audioManager.instance.PlayChargedSound();
                 LaserCooldown = Mathf.Clamp(LaserCooldown, 0, LaserTimeCooldown);
             }
         }

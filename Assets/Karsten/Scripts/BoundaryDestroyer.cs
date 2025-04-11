@@ -7,7 +7,7 @@ public class BoundaryDestroyer : MonoBehaviour
     void Start()
     {
         // Find the EnemySpawner in the scene
-        enemySpawner = FindObjectOfType<EnemySpawner>();
+        enemySpawner = FindFirstObjectByType<EnemySpawner>();
     }
 
     void OnTriggerEnter(Collider other)
